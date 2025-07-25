@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckCircle, Shield, TrendingUp, Users, Star, AlertTriangle, Gift } from 'lucide-react'
+import { CheckCircle, Shield, TrendingUp, Users, Star, AlertTriangle, Gift } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BitcoinCalculator } from "../components/bitcoin-calculator"
@@ -11,10 +11,10 @@ export default function LandingPage() {
 
   useEffect(() => {
     const today = new Date()
-    const formattedDate = today.toLocaleDateString('en-US', {
-      month: '2-digit',
-      day: '2-digit',
-      year: '2-digit'
+    const formattedDate = today.toLocaleDateString("en-US", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "2-digit",
     })
     setCurrentDate(formattedDate)
   }, [])
@@ -117,8 +117,12 @@ export default function LandingPage() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-8 shadow-lg border border-orange-100">
-                  <div className="w-32 h-32 bg-orange-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <div className="text-4xl font-bold text-orange-600">AH</div>
+                  <div className="w-32 h-32 bg-orange-100 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/ashley-harper.jpg"
+                      alt="Ashley Harper - Certified Financial Planner"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Ashley Harper</h3>
                   <p className="text-orange-600 font-semibold mb-4">Certified Financial Planner (CFP®)</p>
@@ -174,7 +178,9 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">O Básico Descomplicado</h3>
                   <p className="text-gray-600 text-center">
-                    A <strong>ÚNICA</strong> explicação que você precisa sobre Bitcoin: o que é de verdade, o fator <strong>surpreendente</strong> que o faz valorizar e a <strong>revelação</strong> de como ele se compara ao dinheiro comum – tudo <strong>sem blablablá técnico</strong>.
+                    A <strong>ÚNICA</strong> explicação que você precisa sobre Bitcoin: o que é de verdade, o fator{" "}
+                    <strong>surpreendente</strong> que o faz valorizar e a <strong>revelação</strong> de como ele se
+                    compara ao dinheiro comum – tudo <strong>sem blablablá técnico</strong>.
                   </p>
                 </CardContent>
               </Card>
@@ -186,7 +192,9 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">Mãos na Massa</h3>
                   <p className="text-gray-600 text-center">
-                    Veja o <strong>PASSO A PASSO PRÁTICO</strong> para ter sua primeira conta em uma corretora top, transferir dinheiro com segurança e sem dor de cabeça pra comprar Bitcoin... <strong>começando com apenas $50 ou menos</strong>!
+                    Veja o <strong>PASSO A PASSO PRÁTICO</strong> para ter sua primeira conta em uma corretora top,
+                    transferir dinheiro com segurança e sem dor de cabeça pra comprar Bitcoin...{" "}
+                    <strong>começando com apenas $50 ou menos</strong>!
                   </p>
                 </CardContent>
               </Card>
@@ -198,7 +206,9 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">Proteja Seu Dinheiro</h3>
                   <p className="text-gray-600 text-center">
-                    A <strong>Fórmula da Segurança Cripto</strong>: como garantir que suas moedas estejam a salvo, decifrar os sinais do mercado para vender ou segurar, e o atalho para <strong>evitar fraudes</strong> que lesam iniciantes.
+                    A <strong>Fórmula da Segurança Cripto</strong>: como garantir que suas moedas estejam a salvo,
+                    decifrar os sinais do mercado para vender ou segurar, e o atalho para{" "}
+                    <strong>evitar fraudes</strong> que lesam iniciantes.
                   </p>
                 </CardContent>
               </Card>
@@ -221,45 +231,70 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-            Com o <span className="text-orange-600">Mapa do Bitcoin</span>, você vai entender:
+              Com o <span className="text-orange-600">Mapa do Bitcoin</span>, você vai entender:
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="bg-green-50 border-green-200">
                 <CardContent className="p-6">
-
                   <ul className="space-y-10">
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>O caminho DESCOMPLICADO para adquirir seu primeiro Bitcoin em menos de 10 minutos, mesmo que você nunca tenha investido antes.</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-green-700">
-                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>Descubrir o SEGREDO por trás da moeda digital que está mudando o mundo – e por que ela é mais simples do que parece (Explicado no minuto 1:13 da aula 2)</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-green-700">
-                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        O "gatilho" oculto que faz o preço do Bitcoin disparar… e como você pode identificá-lo ANTES que seja tarde — ensinado passo a passo pelo dono de uma corretora chinesa que você com certeza já ouviu falar.
+                        O caminho DESCOMPLICADO para adquirir seu primeiro Bitcoin em menos de 10 minutos, mesmo que
+                        você nunca tenha investido antes.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>NUNCA abra sua conta na corretora sem antes saber ISSO – um detalhe simples que pode economizar seu tempo e dor de cabeça.</span>
+                      <span>
+                        Descubrir o SEGREDO por trás da moeda digital que está mudando o mundo – e por que ela é mais
+                        simples do que parece (Explicado no minuto 1:13 da aula 2)
+                      </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>Evitar o ERRO CRÍTICO que 7 em cada 10 pessoas cometem ao transferir dinheiro para corretoras de cripto — com esse checklist SIMPLES sua grana vai chegar com 100% de segurança na corretora.</span>
+                      <span>
+                        O "gatilho" oculto que faz o preço do Bitcoin disparar… e como você pode identificá-lo ANTES que
+                        seja tarde — ensinado passo a passo pelo dono de uma corretora chinesa que você com certeza já
+                        ouviu falar.
+                      </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>O Indicador SECRETO que os grandes investidores usam para saber a hora exata de vender ou segurar seu Bitcoin.</span>
+                      <span>
+                        NUNCA abra sua conta na corretora sem antes saber ISSO – um detalhe simples que pode economizar
+                        seu tempo e dor de cabeça.
+                      </span>
                     </li>
-                    <li className="flex items-start gap-3 text-green-700">                   
-                      <span><strong>E MAIS...</strong></span>
+                    <li className="flex items-start gap-3 text-green-700">
+                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>
+                        Evitar o ERRO CRÍTICO que 7 em cada 10 pessoas cometem ao transferir dinheiro para corretoras de
+                        cripto — com esse checklist SIMPLES sua grana vai chegar com 100% de segurança na corretora.
+                      </span>
                     </li>
-                    <li className="flex items-start gap-3 text-green-700">                   
-                      <span>🎁 <strong>Deixei um PRESENTE SURPRESA dentro do aplicativo para quem garantir até o dia {currentDate} — quem está usando me disse que é injusto eu dar isso de bônus... que este presente sozinho já valia o preço!</strong></span>
+                    <li className="flex items-start gap-3 text-green-700">
+                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>
+                        O Indicador SECRETO que os grandes investidores usam para saber a hora exata de vender ou
+                        segurar seu Bitcoin.
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3 text-green-700">
+                      <span>
+                        <strong>E MAIS...</strong>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3 text-green-700">
+                      <span>
+                        🎁{" "}
+                        <strong>
+                          Deixei um PRESENTE SURPRESA dentro do aplicativo para quem garantir até o dia {currentDate} —
+                          quem está usando me disse que é injusto eu dar isso de bônus... que este presente sozinho já
+                          valia o preço!
+                        </strong>
+                      </span>
                     </li>
                   </ul>
                 </CardContent>
@@ -277,8 +312,8 @@ export default function LandingPage() {
                       <Badge variant="secondary">Depoimento Real</Badge>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Eu tinha muita insegurança pra investir em Bitcoin, achava que era coisa de nerd. O acompanhamento me mostrou como é
-                      simples e seguro. Comprei meus primeiros $35 de bitcoin ontem!"
+                      "Eu tinha muita insegurança pra investir em Bitcoin, achava que era coisa de nerd. O
+                      acompanhamento me mostrou como é simples e seguro. Comprei meus primeiros $35 de bitcoin ontem!"
                     </p>
                     <p className="text-sm font-semibold">– João, 34 anos, autônomo</p>
                   </CardContent>
@@ -295,8 +330,9 @@ export default function LandingPage() {
                       <Badge variant="secondary">Depoimento Real</Badge>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Eu não entendia nada, mas o passo-a-passo do acompanhamento é tão claro que consegui comprar Bitcoin na
-                      primeira semana. Não tenho palavras pra te agradecer, Ashley. Investi pouco mas já valorizou!"
+                      "Eu não entendia nada, mas o passo-a-passo do acompanhamento é tão claro que consegui comprar
+                      Bitcoin na primeira semana. Não tenho palavras pra te agradecer, Ashley. Investi pouco mas já
+                      valorizou!"
                     </p>
                     <p className="text-sm font-semibold">– Mariana, 29 anos, professora</p>
                   </CardContent>
@@ -305,7 +341,10 @@ export default function LandingPage() {
                 <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
                   <h3 className="font-bold text-orange-800 mb-3">Por que agora?</h3>
                   <p className="text-orange-700">
-                    O Bitcoin não apenas valorizou milhares de por cento, mas os especialistas globais são unânimes: o potencial explosivo ainda está à frente! Pense bem: milhões já estão migrando para as criptos, superando até mesmo mercados consolidados. Esta não é uma chance qualquer; é a oportunidade da década que você não pode perder simplesmente por não saber como agir!
+                    O Bitcoin não apenas valorizou milhares de por cento, mas os especialistas globais são unânimes: o
+                    potencial explosivo ainda está à frente! Pense bem: milhões já estão migrando para as criptos,
+                    superando até mesmo mercados consolidados. Esta não é uma chance qualquer; é a oportunidade da
+                    década que você não pode perder simplesmente por não saber como agir!
                   </p>
                 </div>
               </div>
@@ -425,12 +464,24 @@ export default function LandingPage() {
       <section className="bg-orange-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">Costumo dizer que existem dois tipos de pessoas no mundo de hoje:</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Costumo dizer que existem dois tipos de pessoas no mundo de hoje:
+            </h2>
             <p className="text-l mb-8">
-              O Tipo 1: Aquelas que veem a revolução do Bitcoin acontecer, mas não tomam a decisão e não criam a coragem de investir. São as pessoas que, mesmo diante de todas as evidências de valorização e potencial, preferem a inércia. Elas vivem presas à rotina, lamentando as oportunidades perdidas, assistindo de camarote enquanto o futuro financeiro se desenha para os outros. Dia após dia, a insegurança financeira persiste, os sonhos ficam na gaveta e a sensação de "ter perdido o bonde" se instala, condenando-as a uma vida de frustração, dependência e arrependimento por não terem agido quando podiam.
+              O Tipo 1: Aquelas que veem a revolução do Bitcoin acontecer, mas não tomam a decisão e não criam a coragem
+              de investir. São as pessoas que, mesmo diante de todas as evidências de valorização e potencial, preferem
+              a inércia. Elas vivem presas à rotina, lamentando as oportunidades perdidas, assistindo de camarote
+              enquanto o futuro financeiro se desenha para os outros. Dia após dia, a insegurança financeira persiste,
+              os sonhos ficam na gaveta e a sensação de "ter perdido o bonde" se instala, condenando-as a uma vida de
+              frustração, dependência e arrependimento por não terem agido quando podiam.
             </p>
             <p className="text-l mb-8">
-            E o Tipo 2: São as pessoas ambiciosas, que querem mais da vida e não têm medo de ousar. Elas enxergam as oportunidades que o Bitcoin oferece e agem com inteligência e coragem. Essas são as que constroem ativamente seu futuro, garantem sua liberdade financeira e realizam sonhos que antes pareciam impossíveis. Enquanto o Tipo 1 se prende ao passado, o Tipo 2 está construindo um patrimônio robusto, viajando mais, tendo mais tempo para o que importa e vivendo com a tranquilidade de quem está no controle, à frente do seu tempo e colhendo os frutos de suas decisões ousadas e informadas.
+              E o Tipo 2: São as pessoas ambiciosas, que querem mais da vida e não têm medo de ousar. Elas enxergam as
+              oportunidades que o Bitcoin oferece e agem com inteligência e coragem. Essas são as que constroem
+              ativamente seu futuro, garantem sua liberdade financeira e realizam sonhos que antes pareciam impossíveis.
+              Enquanto o Tipo 1 se prende ao passado, o Tipo 2 está construindo um patrimônio robusto, viajando mais,
+              tendo mais tempo para o que importa e vivendo com a tranquilidade de quem está no controle, à frente do
+              seu tempo e colhendo os frutos de suas decisões ousadas e informadas.
             </p>
 
             <a
