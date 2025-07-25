@@ -22,7 +22,7 @@ interface BitcoinCalculationResult {
 }
 
 // Chave da API e URL base para a CryptoCompare
-const CRYPTOCOMPARE_API_KEY = process.env.CRYPTOCOMPARE_API_KEY
+const CRYPTOCOMPARE_API_KEY = "e6847cc853e36059c1959b3853183fef37cabe63aa58063d656a33f06f4fd78a"
 const CRYPTOCOMPARE_BASE_URL = "https://min-api.cryptocompare.com/data"
 
 const fetchFromAPI = async (url: string) => {
@@ -44,7 +44,13 @@ export async function calculateBitcoinInvestment(
   }
 
   try {
-    const initialDate = parseISO(investmentDateString)
+    // Converter YYYY-MM para uma data completa (primeiro dia do mês)
+    const dateWithDay =
+      investmentDateString.includes("-") && investmentDateString.split("-").length === 2
+        ? `${investmentDateString}-01`
+        : investmentDateString
+
+    const initialDate = parseISO(dateWithDay)
     const currentDate = new Date()
 
     const bitcoinStartDate = new Date("2010-07-17")
@@ -54,27 +60,27 @@ export async function calculateBitcoinInvestment(
     if (initialDate < bitcoinStartDate) {
       return {
         result: null,
-        error: `Dados históricos de Bitcoin disponíveis apenas a partir de ${format(bitcoinStartDate, "dd/MM/yyyy")}.`,
+        error: `Dados históricos de Bitcoin disponíveis apenas a partir de ${format(bitcoinStartDate, "MM/yyyy")}.`,
       }
     }
 
-    // 1. Buscar o preço atual
+    // 1. Buscar o preço atual em USD
     const currentPriceData = await fetchFromAPI(
-      `${CRYPTOCOMPARE_BASE_URL}/price?fsym=BTC&tsyms=BRL&api_key=${CRYPTOCOMPARE_API_KEY}`,
+      `${CRYPTOCOMPARE_BASE_URL}/price?fsym=BTC&tsyms=USD&api_key=${CRYPTOCOMPARE_API_KEY}`,
     )
-    const currentPrice = currentPriceData.BRL
+    const currentPrice = currentPriceData.USD
 
     if (!currentPrice || currentPrice <= 0) {
       throw new Error("Não foi possível obter o preço atual do Bitcoin.")
     }
 
-    // 2. Buscar o preço histórico
+    // 2. Buscar o preço histórico em USD
     const historicalTimestamp = Math.floor(initialDate.getTime() / 1000)
     const historicalPriceData = await fetchFromAPI(
-      `${CRYPTOCOMPARE_BASE_URL}/pricehistorical?fsym=BTC&tsyms=BRL&ts=${historicalTimestamp}&api_key=${CRYPTOCOMPARE_API_KEY}`,
+      `${CRYPTOCOMPARE_BASE_URL}/pricehistorical?fsym=BTC&tsyms=USD&ts=${historicalTimestamp}&api_key=${CRYPTOCOMPARE_API_KEY}`,
     )
-    
-    const historicalPrice = historicalPriceData.BTC?.BRL
+
+    const historicalPrice = historicalPriceData.BTC?.USD
 
     if (!historicalPrice || historicalPrice <= 0) {
       throw new Error("Preço histórico do Bitcoin não disponível para esta data.")
@@ -88,8 +94,8 @@ export async function calculateBitcoinInvestment(
     const profitPercentage = ((finalValue - investmentAmount) / investmentAmount) * 100
 
     const chartData: PriceData[] = [
-      { price: investmentAmount, date: format(initialDate, "dd/MM/yyyy"), timestamp: initialDate.getTime() },
-      { price: finalValue, date: format(currentDate, "dd/MM/yyyy"), timestamp: currentDate.getTime() },
+      { price: investmentAmount, date: format(initialDate, "MM/yyyy"), timestamp: initialDate.getTime() },
+      { price: finalValue, date: format(currentDate, "MM/yyyy"), timestamp: currentDate.getTime() },
     ]
 
     const result: BitcoinCalculationResult = {

@@ -1,9 +1,24 @@
-import { CheckCircle, Shield, TrendingUp, Users, Star, AlertTriangle, Gift } from "lucide-react"
+"use client"
+
+import { CheckCircle, Shield, TrendingUp, Users, Star, AlertTriangle, Gift } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BitcoinCalculator } from "../components/bitcoin-calculator"
+import { useEffect, useState } from "react"
 
 export default function LandingPage() {
+  const [currentDate, setCurrentDate] = useState("")
+
+  useEffect(() => {
+    const today = new Date()
+    const formattedDate = today.toLocaleDateString('en-US', {
+      month: '2-digit',
+      day: '2-digit',
+      year: '2-digit'
+    })
+    setCurrentDate(formattedDate)
+  }, [])
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Alert Bar */}
@@ -225,7 +240,7 @@ export default function LandingPage() {
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        O “gatilho” oculto que faz o preço do Bitcoin disparar… e como você pode identificá-lo ANTES que seja tarde — ensinado passo a passo pelo dono de uma corretora chinesa que você com certeza já ouviu falar.
+                        O "gatilho" oculto que faz o preço do Bitcoin disparar… e como você pode identificá-lo ANTES que seja tarde — ensinado passo a passo pelo dono de uma corretora chinesa que você com certeza já ouviu falar.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
@@ -239,6 +254,12 @@ export default function LandingPage() {
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>O Indicador SECRETO que os grandes investidores usam para saber a hora exata de vender ou segurar seu Bitcoin.</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-green-700">                   
+                      <span><strong>E MAIS...</strong></span>
+                    </li>
+                    <li className="flex items-start gap-3 text-green-700">                   
+                      <span>🎁 <strong>Deixei um PRESENTE SURPRESA dentro do aplicativo para quem garantir até o dia {currentDate} — quem está usando me disse que é injusto eu dar isso de bônus... que este presente sozinho já valia o preço!</strong></span>
                     </li>
                   </ul>
                 </CardContent>
@@ -256,8 +277,8 @@ export default function LandingPage() {
                       <Badge variant="secondary">Depoimento Real</Badge>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Eu tinha pavor de investir em Bitcoin, achava que era coisa de nerd. O acompanhamento me mostrou como é
-                      simples e seguro. Comprei meus primeiros R$200 e já me sinto no controle!"
+                      "Eu tinha muita insegurança pra investir em Bitcoin, achava que era coisa de nerd. O acompanhamento me mostrou como é
+                      simples e seguro. Comprei meus primeiros $35 de bitcoin ontem!"
                     </p>
                     <p className="text-sm font-semibold">– João, 34 anos, autônomo</p>
                   </CardContent>
@@ -275,7 +296,7 @@ export default function LandingPage() {
                     </div>
                     <p className="text-gray-700 italic mb-3">
                       "Eu não entendia nada, mas o passo-a-passo do acompanhamento é tão claro que consegui comprar Bitcoin na
-                      primeira semana. Hoje me sinto mais segura!"
+                      primeira semana. Não tenho palavras pra te agradecer, Ashley. Investi pouco mas já valorizou!"
                     </p>
                     <p className="text-sm font-semibold">– Mariana, 29 anos, professora</p>
                   </CardContent>
@@ -297,7 +318,7 @@ export default function LandingPage() {
       <section id="pricing" className="bg-slate-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8">Garanta Sua Vaga Agora e Comece Hoje!</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8">Garanta Seu Acesso Agora e Receba Imediatamente!</h2>
 
             <div className="bg-white text-gray-900 rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
               <div className="text-center mb-6">
