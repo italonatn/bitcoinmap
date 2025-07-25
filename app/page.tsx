@@ -330,7 +330,7 @@ export default function LandingPage() {
                     <p className="text-gray-700 italic mb-3">
                       "I didn't understand anything, but the step-by-step guidance is so clear that I managed to buy
                       Bitcoin in the first week. I have no words to thank you, Ashley. I invested little but it already
-                      appreciated!"
+                      gone up!"
                     </p>
                     <p className="text-sm font-semibold">– Mariana, 29 years old, teacher</p>
                   </CardContent>
