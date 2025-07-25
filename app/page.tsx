@@ -77,16 +77,16 @@ export default function LandingPage() {
       </section>
 
       {/* About Section */}
-      <section className="py-16">
+      <section className="py-16 bg-orange-600">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">
               <i>"E por que é uma decisão inteligente te escutar?"</i>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-white leading-relaxed">
                   Oi! Eu sou a <strong>Ashley Harper</strong>, e sou <strong>Certified Financial Planner (CFP®)</strong>
                   . Minha paixão por finanças surgiu de algo bem pessoal: ver de perto o impacto que um bom planejamento
                   financeiro teve na minha própria família. Foi aí que percebi o quanto essa segurança e liberdade podem
@@ -94,7 +94,7 @@ export default function LandingPage() {
                   mesmo.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-white leading-relaxed">
                   Com 41 anos, já vi muita coisa no mercado e no mundo. Minha formação como CFP® me deu uma base sólida
                   em planejamento estratégico, gestão de investimentos e análise de mercado – e sempre, sempre, com foco
                   na ética e no que é melhor para você. Essa experiência me permite transitar com tranquilidade tanto
@@ -102,13 +102,13 @@ export default function LandingPage() {
                   Bitcoin.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-white leading-relaxed">
                   Ao longo da minha jornada profissional, ficou claro pra mim a importância crescente e o potencial do
                   Bitcoin. Meu objetivo é trazer clareza e uma orientação de qualidade para quem quer entender e, quem
                   sabe, dar os primeiros passos nesse novo cenário.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-white leading-relaxed">
                   Eu realmente acredito que o conhecimento é a chave para a liberdade. Por isso, estou aqui para te
                   pegar pela mão, desde seu primeiro investimento em Bitcoin, passando pelas decisões importantes, até
                   te explicar sobre segurança nesse mundo das criptos. <strong>Vamos juntos?!</strong>
