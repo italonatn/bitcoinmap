@@ -159,8 +159,7 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">O Básico Descomplicado</h3>
                   <p className="text-gray-600 text-center">
-                    Entenda o que é Bitcoin, por que ele valoriza e como é diferente do dinheiro tradicional – tudo
-                    explicado em linguagem simples, sem jargões técnicos.
+                    A <strong>ÚNICA</strong> explicação que você precisa sobre Bitcoin: o que é de verdade, o fator <strong>surpreendente</strong> que o faz valorizar e a <strong>revelação</strong> de como ele se compara ao dinheiro comum – tudo <strong>sem blablablá técnico</strong>.
                   </p>
                 </CardContent>
               </Card>
@@ -172,8 +171,7 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">Mãos na Massa</h3>
                   <p className="text-gray-600 text-center">
-                    Veja o passo a passo para criar uma conta em uma corretora confiável, transferir dinheiro via Pix
-                    com segurança e comprar suas primeiras frações de Bitcoin (mesmo com apenas R$100!).
+                    Veja o <strong>PASSO A PASSO PRÁTICO</strong> para ter sua primeira conta em uma corretora top, transferir dinheiro com segurança e sem dor de cabeça pra comprar Bitcoin... <strong>começando com apenas $50 ou menos</strong>!
                   </p>
                 </CardContent>
               </Card>
@@ -185,8 +183,7 @@ export default function LandingPage() {
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">Proteja Seu Dinheiro</h3>
                   <p className="text-gray-600 text-center">
-                    Aprenda como guardar suas criptomoedas com segurança, identificar o momento certo de vender ou
-                    manter, e evitar golpes que lesam iniciantes.
+                    A <strong>Fórmula da Segurança Cripto</strong>: como garantir que suas moedas estejam a salvo, decifrar os sinais do mercado para vender ou segurar, e o atalho para <strong>evitar fraudes</strong> que lesam iniciantes.
                   </p>
                 </CardContent>
               </Card>
@@ -208,37 +205,38 @@ export default function LandingPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Imagine Você no Controle das Suas Finanças</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Com o Mapa do Bitcoin, você vai:</h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="bg-green-50 border-green-200">
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-green-800 mb-4 flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5" />
-                    Com o Mapa do Bitcoin, você vai:
-                  </h3>
+
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>Aprender a comprar seu primeiro Bitcoin em poucos minutos</span>
+                      <span>O caminho DESCOMPLICADO para adquirir seu primeiro Bitcoin em menos de 10 minutos, mesmo que você nunca tenha investido antes.</span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>Proteger seu dinheiro da inflação que está corroendo suas economias</span>
+                      <span>Descubrir o SEGREDO por trás da moeda digital que está mudando o mundo – e por que ela é mais simples do que parece (Explicado no minuto 1:13 da aula 2)</span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        Aproveitar o potencial do Bitcoin, que já transformou pequenos investimentos em fortunas
+                        O “gatilho” oculto que faz o preço do Bitcoin disparar… e como você pode identificá-lo ANTES que seja tarde — ensinado passo a passo pelo dono de uma corretora chinesa que você com certeza já ouviu falar.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>Saber quando segurar ou vender, com dicas práticas para não perder dinheiro</span>
+                      <span>NUNCA abra sua conta na corretora sem antes saber ISSO – um detalhe simples que pode economizar seu tempo e dor de cabeça.</span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>Sentir orgulho de estar à frente, enquanto outros ficam apenas sonhando</span>
+                      <span>Evitar o ERRO CRÍTICO que 7 em cada 10 pessoas cometem ao transferir dinheiro para corretoras de cripto — com esse checklist SIMPLES sua grana vai chegar com 100% de segurança na corretora.</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-green-700">
+                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>O Indicador SECRETO que os grandes investidores usam para saber a hora exata de vender ou segurar seu Bitcoin.</span>
                     </li>
                   </ul>
                 </CardContent>

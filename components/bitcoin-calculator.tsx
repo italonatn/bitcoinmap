@@ -234,7 +234,7 @@ export function BitcoinCalculator() {
 
               <div>
                 <label htmlFor="investmentDate" className="block text-sm font-medium text-gray-700 mb-2">
-                  Data para simulação *
+                  Data — em média — da primeira vez que ouviu falar*
                 </label>
                 <input
                   id="investmentDate"
@@ -252,7 +252,7 @@ export function BitcoinCalculator() {
 
               <div>
                 <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-2">
-                  Valor hipotético que teria investido (USD) *
+                  Valor hipotético que teria investido (USD)*
                 </label>
                 <input
                   id="amount"
