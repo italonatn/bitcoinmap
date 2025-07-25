@@ -55,7 +55,7 @@ export function BitcoinCalculator() {
 
   const validateInputs = (investmentAmount: number, dateString: string): string | null => {
     if (!investmentAmount || investmentAmount <= 0) {
-      return "Por favor, insira um valor válido para investir (maior que R$0)."
+      return "Por favor, insira um valor válido para investir (maior que $0)."
     }
 
     if (!dateString) {
@@ -234,7 +234,7 @@ export function BitcoinCalculator() {
 
               <div>
                 <label htmlFor="investmentDate" className="block text-sm font-medium text-gray-700 mb-2">
-                  Data — em média — da primeira vez que ouviu falar*
+                  Coloaque aqui a data — em média — da primeira vez que ouviu falar*
                 </label>
                 <input
                   id="investmentDate"
@@ -342,7 +342,7 @@ export function BitcoinCalculator() {
             {!result && !error && !loading && (
               <div className="text-center text-gray-500 py-8">
                 <Calculator className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                <p className="text-sm">Preencha os campos e clique em "Calcular"</p>
+                <p className="text-sm">Preencha os campos e clique em "Simular Investimento"</p>
                 <p className="text-xs text-gray-400 mt-2">Simule o retorno de um investimento em Bitcoin.</p>
               </div>
             )}

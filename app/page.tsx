@@ -195,7 +195,7 @@ export default function LandingPage() {
       <div className="flex justify-center">
         <a
           href="#pricing"
-          className="inline-block bg-orange-600 hover:bg-orange-700 text-white py-4 px-8 text-xl font-bold rounded-lg shadow-xl transition-all duration-300 hover:scale-105"
+          className="text-center bg-orange-600 text-white hover:bg-orange-700 px-12 py-4 text-xl font-bold rounded-lg shadow-xl mb-6"
         >
           👉 Não perca mais dinheiro! Aprenda a investir em Bitcoin agora!
         </a>
@@ -256,7 +256,7 @@ export default function LandingPage() {
                       <Badge variant="secondary">Depoimento Real</Badge>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Eu tinha pavor de investir em Bitcoin, achava que era coisa de nerd. O curso me mostrou como é
+                      "Eu tinha pavor de investir em Bitcoin, achava que era coisa de nerd. O acompanhamento me mostrou como é
                       simples e seguro. Comprei meus primeiros R$200 e já me sinto no controle!"
                     </p>
                     <p className="text-sm font-semibold">– João, 34 anos, autônomo</p>
@@ -274,7 +274,7 @@ export default function LandingPage() {
                       <Badge variant="secondary">Depoimento Real</Badge>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Eu não entendia nada, mas o passo-a-passo do curso é tão claro que consegui comprar Bitcoin na
+                      "Eu não entendia nada, mas o passo-a-passo do acompanhamento é tão claro que consegui comprar Bitcoin na
                       primeira semana. Hoje me sinto mais segura!"
                     </p>
                     <p className="text-sm font-semibold">– Mariana, 29 anos, professora</p>
@@ -317,16 +317,16 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Suporte via WhatsApp</span>
+                  <span>Canais de suporte via: e-mail, telegram e whatsapp</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Garantia de 7 dias</span>
+                  <span>Garantia de 90 dias</span>
                 </div>
                 <div className="flex items-center gap-3 bg-yellow-100 p-3 rounded-lg">
                   <Gift className="w-5 h-5 text-yellow-600" />
                   <span className="font-semibold text-yellow-800">
-                    BÔNUS: Guia PDF "Onde Guardar Seus Bitcoins com Segurança"
+                    BÔNUS: Presente surpresa no app e 90 dias de garantia condicional
                   </span>
                 </div>
               </div>
@@ -341,7 +341,7 @@ export default function LandingPage() {
               </a>
 
               <div className="text-sm text-gray-500">
-                🔒 Pagamento 100% seguro • Garantia de 7 dias • Acesso imediato
+                🔒 Pagamento 100% seguro • Garantia de 90 dias • Acesso imediato
               </div>
             </div>
 
@@ -367,7 +367,7 @@ export default function LandingPage() {
               <Card className="text-center">
                 <CardContent className="p-6">
                   <Users className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">+5.000 Alunos</h3>
+                  <h3 className="font-bold mb-2">+1.311 Alunos</h3>
                   <p className="text-sm text-gray-600">Já transformaram medo em confiança</p>
                 </CardContent>
               </Card>
@@ -391,7 +391,7 @@ export default function LandingPage() {
               <Card className="text-center">
                 <CardContent className="p-6">
                   <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">Suporte WhatsApp</h3>
+                  <h3 className="font-bold mb-2">Suporte no e-mail, telegram e whatsapp</h3>
                   <p className="text-sm text-gray-600">Tire suas dúvidas quando precisar</p>
                 </CardContent>
               </Card>
@@ -427,7 +427,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">© 2024 Mapa do Bitcoin. Todos os direitos reservados.</p>
+          <p className="text-gray-400">© 2022 Mapa do Bitcoin. Todos os direitos reservados.</p>
           <p className="text-sm text-gray-500 mt-2">
             Este curso é educacional. Investimentos envolvem riscos. Rentabilidade passada não garante resultados
             futuros.
