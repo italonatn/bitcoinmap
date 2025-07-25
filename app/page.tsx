@@ -23,7 +23,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Alert Bar */}
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm font-medium">
-        🎁 Este presente é limitado — preste atenção para não deixar de receber!
+        🎁 This gift is limited — pay attention so you don't miss out!
       </div>
 
       {/* Hero Section */}
@@ -31,46 +31,45 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <AlertTriangle className="w-4 h-4" />
-            Atenção: Pessoas Comuns Estão Mudando de Vida Enquanto Você Fica Parado!
+            Warning: Ordinary People Are Changing Their Lives While You Stand Still!
           </div>
 
           <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            🚨 Está Cansado de Ver o Bitcoin Subir e Ficar Só na Vontade? 🚀
+            🚨 Tired of Watching Bitcoin Rise and Just Wishing? 🚀
           </h1>
 
           <p className="text-xl lg:text-2xl text-orange-600 font-bold mb-6">
-            Não deixe o medo ou a falta de conhecimento te pararem! Com esse{" "}
-            <span className="text-3xl bg-yellow-200 px-2 py-1 rounded">MDB</span> você aprende tudo para investir em
-            Bitcoin com segurança!
+            Don't let fear or lack of knowledge stop you! With this{" "}
+            <span className="text-3xl bg-yellow-200 px-2 py-1 rounded">BB</span> you'll learn everything to invest in
+            Bitcoin safely!
           </p>
 
           <div className="bg-gray-50 rounded-lg p-6 mb-8 max-w-4xl mx-auto">
             <p className="text-lg text-gray-700 mb-4">
-              Você já ouviu falar que o Bitcoin está mudando vidas e enriquecendo pessoas comuns, mas se sente perdido,
-              com medo de cair em golpes ou simplesmente não sabe por onde começar?
+              You've heard that Bitcoin is changing lives and making ordinary people rich, but you feel lost,
+              afraid of falling for scams, or simply don't know where to start?
             </p>
             <p className="text-base text-gray-600 mb-4">
-              Esse <strong>MDB</strong> será sua professora (passo a passo) para entrar no mundo do Bitcoin com
-              segurança, mesmo que você seja 100% leigo e nunca tenha investido um centavo na vida.
+              This <strong>BB</strong> will be your teacher (step by step) to enter the Bitcoin world safely,
+              even if you're 100% beginner and have never invested a penny in your life.
             </p>
             <p className="text-base text-gray-600">
-              Criptomoedas já são o <strong>4º investimento mais popular</strong> do <strong>MUNDO</strong>, e o Bitcoin
-              valorizou
-              <strong> mais de 1000% em poucos anos</strong> – mas a maioria dos iniciantes perde dinheiro por não saber
-              o básico.
+              Cryptocurrencies are already the <strong>4th most popular investment</strong> in the <strong>WORLD</strong>, and Bitcoin has appreciated
+              <strong> more than 1000% in just a few years</strong> – but most beginners lose money because they don't know
+              the basics.
             </p>
           </div>
 
           <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
             <h3 className="text-xl font-bold text-green-800 mb-3">
-              💡 Imagine como seria ter a confiança para investir em Bitcoin...
+              💡 Imagine having the confidence to invest in Bitcoin...
             </h3>
             <p className="text-green-700 text-lg mb-3">
               …watch your money grow much faster than in a regular bank account, which barely keeps up with inflation.
             </p>
             <p className="text-green-700">
-              <strong>Você não precisa de milhares de dólares!</strong> Comece com apenas $50 ou menos – sim, você pode
-              comprar frações de Bitcoin e entrar no jogo sem ser rico — a intenção é que você se torne.
+              <strong>You don't need thousands of dollars!</strong> Start with just $50 or less – yes, you can
+              buy fractions of Bitcoin and enter the game without being rich — the intention is for you to become one.
             </p>
           </div>
         </div>
@@ -81,37 +80,37 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-white">
-              <i>"E por que é uma decisão inteligente te escutar?"</i>
+              <i>"And why is it a smart decision to listen to me?"</i>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <p className="text-white leading-relaxed">
-                  Oi! Eu sou a <strong>Ashley Harper</strong>, e sou <strong>Certified Financial Planner (CFP®)</strong>
-                  . Minha paixão por finanças surgiu de algo bem pessoal: ver de perto o impacto que um bom planejamento
-                  financeiro teve na minha própria família. Foi aí que percebi o quanto essa segurança e liberdade podem
-                  transformar vidas, e isso me impulsionou a dedicar minha carreira a ajudar outras pessoas a sentirem o
-                  mesmo.
+                  Hi! I'm <strong>Ashley Harper</strong>, and I'm a <strong>Certified Financial Planner (CFP®)</strong>
+                  . My passion for finance arose from something very personal: seeing firsthand the impact that good financial
+                  planning had on my own family. That's when I realized how much this security and freedom can
+                  transform lives, and that drove me to dedicate my career to helping other people feel the
+                  same.
                 </p>
 
                 <p className="text-white leading-relaxed">
-                  Com 41 anos, já vi muita coisa no mercado e no mundo. Minha formação como CFP® me deu uma base sólida
-                  em planejamento estratégico, gestão de investimentos e análise de mercado – e sempre, sempre, com foco
-                  na ética e no que é melhor para você. Essa experiência me permite transitar com tranquilidade tanto
-                  nos investimentos mais tradicionais quanto nesse universo fascinante das criptomoedas, em especial o
+                  At 41 years old, I've seen a lot in the market and in the world. My CFP® training gave me a solid foundation
+                  in strategic planning, investment management and market analysis – and always, always, with focus
+                  on ethics and what's best for you. This experience allows me to navigate comfortably both
+                  in more traditional investments and in this fascinating universe of cryptocurrencies, especially
                   Bitcoin.
                 </p>
 
                 <p className="text-white leading-relaxed">
-                  Ao longo da minha jornada profissional, ficou claro pra mim a importância crescente e o potencial do
-                  Bitcoin. Meu objetivo é trazer clareza e uma orientação de qualidade para quem quer entender e, quem
-                  sabe, dar os primeiros passos nesse novo cenário.
+                  Throughout my professional journey, the growing importance and potential of
+                  Bitcoin became clear to me. My goal is to bring clarity and quality guidance for those who want to understand and, who
+                  knows, take the first steps in this new scenario.
                 </p>
 
                 <p className="text-white leading-relaxed">
-                  Eu realmente acredito que o conhecimento é a chave para a liberdade. Por isso, estou aqui para te
-                  pegar pela mão, desde seu primeiro investimento em Bitcoin, passando pelas decisões importantes, até
-                  te explicar sobre segurança nesse mundo das criptos. <strong>Vamos juntos?!</strong>
+                  I truly believe that knowledge is the key to freedom. That's why I'm here to
+                  take you by the hand, from your first Bitcoin investment, through important decisions, to
+                  explaining security in this crypto world. <strong>Let's go together?!</strong>
                 </p>
               </div>
 
@@ -129,15 +128,15 @@ export default function LandingPage() {
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center justify-center gap-2">
                       <Shield className="w-4 h-4 text-orange-600" />
-                      <span>11 anos de experiência</span>
+                      <span>11 years of experience</span>
                     </div>
                     <div className="flex items-center justify-center gap-2">
                       <TrendingUp className="w-4 h-4 text-orange-600" />
-                      <span>Especialista em Bitcoin</span>
+                      <span>Bitcoin specialist</span>
                     </div>
                     <div className="flex items-center justify-center gap-2">
                       <Users className="w-4 h-4 text-orange-600" />
-                      <span>+1.311 alunos orientados</span>
+                      <span>+1,311 students guided</span>
                     </div>
                   </div>
                 </div>
@@ -162,11 +161,11 @@ export default function LandingPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                ...por este motivo desenvolvi o <span className="text-orange-600">Mapa do Bitcoin</span>
+                ...for this reason I developed the <span className="text-orange-600">Bitcoin Blueprint</span>
               </h2>
               <p className="text-xl text-gray-600">
-                Um acompanhamento digital criado personalizadamente para quem nunca investiu em criptomoedas e quer
-                começar do absoluto zero.
+                A digital guidance created specifically for those who have never invested in cryptocurrencies and want to
+                start from absolute zero.
               </p>
             </div>
 
@@ -176,11 +175,11 @@ export default function LandingPage() {
                   <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-2xl font-bold">1</span>
                   </div>
-                  <h3 className="text-xl font-bold text-center mb-4">O Básico Descomplicado</h3>
+                  <h3 className="text-xl font-bold text-center mb-4">The Basics Simplified</h3>
                   <p className="text-gray-600 text-center">
-                    A <strong>ÚNICA</strong> explicação que você precisa sobre Bitcoin: o que é de verdade, o fator{" "}
-                    <strong>surpreendente</strong> que o faz valorizar e a <strong>revelação</strong> de como ele se
-                    compara ao dinheiro comum – tudo <strong>sem blablablá técnico</strong>.
+                    The <strong>ONLY</strong> explanation you need about Bitcoin: what it really is, the{" "}
+                    <strong>surprising</strong> factor that makes it appreciate and the <strong>revelation</strong> of how it
+                    compares to regular money – all <strong>without technical jargon</strong>.
                   </p>
                 </CardContent>
               </Card>
@@ -190,11 +189,11 @@ export default function LandingPage() {
                   <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-2xl font-bold">2</span>
                   </div>
-                  <h3 className="text-xl font-bold text-center mb-4">Mãos na Massa</h3>
+                  <h3 className="text-xl font-bold text-center mb-4">Hands-On Practice</h3>
                   <p className="text-gray-600 text-center">
-                    Veja o <strong>PASSO A PASSO PRÁTICO</strong> para ter sua primeira conta em uma corretora top,
-                    transferir dinheiro com segurança e sem dor de cabeça pra comprar Bitcoin...{" "}
-                    <strong>começando com apenas $50 ou menos</strong>!
+                    See the <strong>PRACTICAL STEP-BY-STEP</strong> to have your first account on a top exchange,
+                    transfer money safely and hassle-free to buy Bitcoin...{" "}
+                    <strong>starting with just $50 or less</strong>!
                   </p>
                 </CardContent>
               </Card>
@@ -204,11 +203,11 @@ export default function LandingPage() {
                   <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-2xl font-bold">3</span>
                   </div>
-                  <h3 className="text-xl font-bold text-center mb-4">Proteja Seu Dinheiro</h3>
+                  <h3 className="text-xl font-bold text-center mb-4">Protect Your Money</h3>
                   <p className="text-gray-600 text-center">
-                    A <strong>Fórmula da Segurança Cripto</strong>: como garantir que suas moedas estejam a salvo,
-                    decifrar os sinais do mercado para vender ou segurar, e o atalho para{" "}
-                    <strong>evitar fraudes</strong> que lesam iniciantes.
+                    The <strong>Crypto Security Formula</strong>: how to ensure your coins are safe,
+                    decode market signals to sell or hold, and the shortcut to{" "}
+                    <strong>avoid fraud</strong> that harms beginners.
                   </p>
                 </CardContent>
               </Card>
@@ -222,7 +221,7 @@ export default function LandingPage() {
           href="#pricing"
           className="text-center bg-orange-600 text-white hover:bg-orange-700 px-12 py-4 text-xl font-bold rounded-lg shadow-xl mb-6"
         >
-          👉 Não perca mais dinheiro! Aprenda a investir em Bitcoin agora!
+          👉 Don't lose more money! Learn to invest in Bitcoin now!
         </a>
       </div>
 
@@ -231,7 +230,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Com o <span className="text-orange-600">Mapa do Bitcoin</span>, você vai entender:
+              With the <span className="text-orange-600">Bitcoin Blueprint</span>, you'll understand:
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -241,58 +240,57 @@ export default function LandingPage() {
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        O caminho DESCOMPLICADO para adquirir seu primeiro Bitcoin em menos de 10 minutos, mesmo que
-                        você nunca tenha investido antes.
+                        The SIMPLIFIED path to acquire your first Bitcoin in less than 10 minutes, even if
+                        you've never invested before.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        Descubrir o SEGREDO por trás da moeda digital que está mudando o mundo – e por que ela é mais
-                        simples do que parece (Explicado no minuto 1:13 da aula 2)
+                        Discover the SECRET behind the digital currency that's changing the world – and why it's simpler
+                        than it seems (Explained at minute 1:13 of lesson 2)
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        O "gatilho" oculto que faz o preço do Bitcoin disparar… e como você pode identificá-lo ANTES que
-                        seja tarde — ensinado passo a passo pelo dono de uma corretora chinesa que você com certeza já
-                        ouviu falar.
+                        The hidden "trigger" that makes Bitcoin's price skyrocket… and how you can identify it BEFORE it's
+                        too late — taught step by step by the owner of a Chinese exchange you've certainly heard of.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        NUNCA abra sua conta na corretora sem antes saber ISSO – um detalhe simples que pode economizar
-                        seu tempo e dor de cabeça.
+                        NEVER open your exchange account without knowing THIS first – a simple detail that can save
+                        your time and headaches.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        Evitar o ERRO CRÍTICO que 7 em cada 10 pessoas cometem ao transferir dinheiro para corretoras de
-                        cripto — com esse checklist SIMPLES sua grana vai chegar com 100% de segurança na corretora.
+                        Avoid the CRITICAL ERROR that 7 out of 10 people make when transferring money to crypto exchanges
+                        — with this SIMPLE checklist your money will arrive 100% safely at the exchange.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
-                        O Indicador SECRETO que os grandes investidores usam para saber a hora exata de vender ou
-                        segurar seu Bitcoin.
+                        The SECRET Indicator that big investors use to know the exact time to sell or
+                        hold their Bitcoin.
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <span>
-                        <strong>E MAIS...</strong>
+                        <strong>AND MORE...</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-3 text-green-700">
                       <span>
                         🎁{" "}
                         <strong>
-                          Deixei um PRESENTE SURPRESA dentro do aplicativo para quem garantir até o dia {currentDate} —
-                          quem está usando me disse que é injusto eu dar isso de bônus... que este presente sozinho já
-                          valia o preço!
+                          I left a SURPRISE GIFT inside the app for those who secure it by {currentDate} —
+                          those who are using it told me it's unfair for me to give this as a bonus... that this gift alone was worth
+                          the price!
                         </strong>
                       </span>
                     </li>
@@ -309,13 +307,13 @@ export default function LandingPage() {
                           <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
-                      <Badge variant="secondary">Depoimento Real</Badge>
+                      <Badge variant="secondary">Real Testimonial</Badge>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Eu tinha muita insegurança pra investir em Bitcoin, achava que era coisa de nerd. O
-                      acompanhamento me mostrou como é simples e seguro. Comprei meus primeiros $35 de bitcoin ontem!"
+                      "I had a lot of insecurity about investing in Bitcoin, I thought it was just for nerds. The
+                      guide showed me how simple and safe it is. I bought my first $35 of bitcoin yesterday!"
                     </p>
-                    <p className="text-sm font-semibold">– João, 34 anos, autônomo</p>
+                    <p className="text-sm font-semibold">– John, 34 years old, freelancer</p>
                   </CardContent>
                 </Card>
 
@@ -327,24 +325,24 @@ export default function LandingPage() {
                           <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
-                      <Badge variant="secondary">Depoimento Real</Badge>
+                      <Badge variant="secondary">Real Testimonial</Badge>
                     </div>
                     <p className="text-gray-700 italic mb-3">
-                      "Eu não entendia nada, mas o passo-a-passo do acompanhamento é tão claro que consegui comprar
-                      Bitcoin na primeira semana. Não tenho palavras pra te agradecer, Ashley. Investi pouco mas já
-                      valorizou!"
+                      "I didn't understand anything, but the step-by-step guidance is so clear that I managed to buy
+                      Bitcoin in the first week. I have no words to thank you, Ashley. I invested little but it already
+                      appreciated!"
                     </p>
-                    <p className="text-sm font-semibold">– Mariana, 29 anos, professora</p>
+                    <p className="text-sm font-semibold">– Mariana, 29 years old, teacher</p>
                   </CardContent>
                 </Card>
 
                 <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
-                  <h3 className="font-bold text-orange-800 mb-3">Por que agora?</h3>
+                  <h3 className="font-bold text-orange-800 mb-3">Why now?</h3>
                   <p className="text-orange-700">
-                    O Bitcoin não apenas valorizou milhares de por cento, mas os especialistas globais são unânimes: o
-                    potencial explosivo ainda está à frente! Pense bem: milhões já estão migrando para as criptos,
-                    superando até mesmo mercados consolidados. Esta não é uma chance qualquer; é a oportunidade da
-                    década que você não pode perder simplesmente por não saber como agir!
+                    Bitcoin hasn't just appreciated thousands of percent, but global experts are unanimous: the
+                    explosive potential is still ahead! Think about it: millions are already migrating to cryptos,
+                    even surpassing established markets. This isn't just any chance; it's the opportunity of
+                    the decade that you can't miss simply because you don't know how to act!
                   </p>
                 </div>
               </div>
@@ -357,36 +355,36 @@ export default function LandingPage() {
       <section id="pricing" className="bg-slate-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8">Garanta Seu Acesso Agora e Receba Imediatamente!</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8">Secure Your Access Now and Receive Immediately!</h2>
 
             <div className="bg-white text-gray-900 rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
               <div className="text-center mb-6">
-                <div className="text-sm text-gray-500 line-through mb-2">De R$197 por</div>
-                <div className="text-6xl font-bold text-orange-600 mb-2">R$47</div>
-                <div className="text-lg text-gray-600">Pagamento único • Sem mensalidades</div>
+                <div className="text-sm text-gray-500 line-through mb-2">From $197 for</div>
+                <div className="text-6xl font-bold text-orange-600 mb-2">$47</div>
+                <div className="text-lg text-gray-600">One-time payment • No monthly fees</div>
               </div>
 
               <div className="space-y-3 mb-6">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>3 módulos em vídeo completos</span>
+                  <span>3 complete video modules</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Acesso imediato e vitalício</span>
+                  <span>Immediate and lifetime access</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Suporte via e-mail, telegram e whatsapp</span>
+                  <span>Support via email, telegram and whatsapp</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Garantia de 90 dias</span>
+                  <span>90-day guarantee</span>
                 </div>
                 <div className="flex items-center gap-3 bg-yellow-100 p-3 rounded-lg">
                   <Gift className="w-5 h-5 text-yellow-600" />
                   <span className="font-semibold text-yellow-800">
-                    BÔNUS: Presente surpresa no app e 90 dias de garantia condicional
+                    BONUS: Surprise gift in the app and 90-day conditional guarantee
                   </span>
                 </div>
               </div>
@@ -397,20 +395,20 @@ export default function LandingPage() {
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-orange-600 hover:bg-orange-700 text-white py-4 text-xl font-bold rounded-lg shadow-xl mb-4"
               >
-                👉 Quero Começar a Investir em Bitcoin por R$47!
+                👉 I Want to Start Investing in Bitcoin for $47!
               </a>
 
               <div className="text-sm text-gray-500">
-                🔒 Pagamento 100% seguro • Garantia de 90 dias • Acesso imediato
+                🔒 100% secure payment • 90-day guarantee • Immediate access
               </div>
             </div>
 
             <div className="bg-red-600 text-white rounded-lg p-6 mb-8">
-              <h3 className="text-xl font-bold mb-2">⏳ Não perca mais tempo!</h3>
+              <h3 className="text-xl font-bold mb-2">⏳ Don't waste more time!</h3>
               <p>
-                O Bitcoin não espera, e cada dia que passa é uma chance a menos de entrar no momento certo. Esta oferta
-                promocional é por tempo limitado - não caia em promessas de dinheiro fácil ou grupos de sinais caros. O
-                verdadeiro segredo é o conhecimento!
+                Bitcoin doesn't wait, and each passing day is one less chance to enter at the right moment. This promotional offer
+                is for a limited time - don't fall for promises of easy money or expensive signal groups. The
+                real secret is knowledge!
               </p>
             </div>
           </div>
@@ -421,38 +419,38 @@ export default function LandingPage() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Por que confiar no Mapa do Bitcoin?</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Why trust the Bitcoin Blueprint?</h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="text-center">
                 <CardContent className="p-6">
                   <Users className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">+1.311 Alunos</h3>
-                  <p className="text-sm text-gray-600">Já transformaram medo em confiança</p>
+                  <h3 className="font-bold mb-2">+1,311 Students</h3>
+                  <p className="text-sm text-gray-600">Already transformed fear into confidence</p>
                 </CardContent>
               </Card>
 
               <Card className="text-center">
                 <CardContent className="p-6">
                   <Shield className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">Especialistas</h3>
-                  <p className="text-sm text-gray-600">Anos de experiência no mercado cripto</p>
+                  <h3 className="font-bold mb-2">Experts</h3>
+                  <p className="text-sm text-gray-600">Years of experience in the crypto market</p>
                 </CardContent>
               </Card>
 
               <Card className="text-center">
                 <CardContent className="p-6">
                   <CheckCircle className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">100% Seguro</h3>
-                  <p className="text-sm text-gray-600">Aprenda sem preocupação</p>
+                  <h3 className="font-bold mb-2">100% Safe</h3>
+                  <p className="text-sm text-gray-600">Learn without worry</p>
                 </CardContent>
               </Card>
 
               <Card className="text-center">
                 <CardContent className="p-6">
                   <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">Suporte no e-mail, telegram e whatsapp</h3>
-                  <p className="text-sm text-gray-600">Tire suas dúvidas quando precisar</p>
+                  <h3 className="font-bold mb-2">Support via email, telegram and whatsapp</h3>
+                  <p className="text-sm text-gray-600">Ask questions when you need</p>
                 </CardContent>
               </Card>
             </div>
@@ -465,23 +463,23 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Costumo dizer que existem dois tipos de pessoas no mundo de hoje:
+              I usually say there are two types of people in today's world:
             </h2>
             <p className="text-l mb-8">
-              O Tipo 1: Aquelas que veem a revolução do Bitcoin acontecer, mas não tomam a decisão e não criam a coragem
-              de investir. São as pessoas que, mesmo diante de todas as evidências de valorização e potencial, preferem
-              a inércia. Elas vivem presas à rotina, lamentando as oportunidades perdidas, assistindo de camarote
-              enquanto o futuro financeiro se desenha para os outros. Dia após dia, a insegurança financeira persiste,
-              os sonhos ficam na gaveta e a sensação de "ter perdido o bonde" se instala, condenando-as a uma vida de
-              frustração, dependência e arrependimento por não terem agido quando podiam.
+              Type 1: Those who see the Bitcoin revolution happening, but don't make the decision and don't create the courage
+              to invest. They're the people who, even faced with all the evidence of appreciation and potential, prefer
+              inertia. They live trapped in routine, lamenting missed opportunities, watching from the sidelines
+              while the financial future unfolds for others. Day after day, financial insecurity persists,
+              dreams stay in the drawer and the feeling of "having missed the boat" sets in, condemning them to a life of
+              frustration, dependence and regret for not having acted when they could.
             </p>
             <p className="text-l mb-8">
-              E o Tipo 2: São as pessoas ambiciosas, que querem mais da vida e não têm medo de ousar. Elas enxergam as
-              oportunidades que o Bitcoin oferece e agem com inteligência e coragem. Essas são as que constroem
-              ativamente seu futuro, garantem sua liberdade financeira e realizam sonhos que antes pareciam impossíveis.
-              Enquanto o Tipo 1 se prende ao passado, o Tipo 2 está construindo um patrimônio robusto, viajando mais,
-              tendo mais tempo para o que importa e vivendo com a tranquilidade de quem está no controle, à frente do
-              seu tempo e colhendo os frutos de suas decisões ousadas e informadas.
+              And Type 2: These are ambitious people, who want more from life and aren't afraid to dare. They see the
+              opportunities that Bitcoin offers and act with intelligence and courage. These are the ones who actively build
+              their future, guarantee their financial freedom and realize dreams that once seemed impossible.
+              While Type 1 clings to the past, Type 2 is building a robust portfolio, traveling more,
+              having more time for what matters and living with the tranquility of those who are in control, ahead of
+              their time and reaping the fruits of their bold and informed decisions.
             </p>
 
             <a
@@ -490,10 +488,10 @@ export default function LandingPage() {
               rel="noopener noreferrer"
               className="inline-block text-center bg-white text-orange-600 hover:bg-gray-100 px-12 py-4 text-xl font-bold rounded-lg shadow-xl mb-6"
             >
-              Se Você é o Tipo 2 — Clique e Comece Sua Jornada no Bitcoin!
+              If You're Type 2 — Click and Start Your Bitcoin Journey!
             </a>
 
-            <p className="text-orange-100">Tome o controle do seu futuro financeiro hoje!</p>
+            <p className="text-orange-100">Take control of your financial future today!</p>
           </div>
         </div>
       </section>
@@ -501,10 +499,10 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">© 2022 Mapa do Bitcoin. Todos os direitos reservados.</p>
+          <p className="text-gray-400">© 2022 Bitcoin Blueprint. All rights reserved.</p>
           <p className="text-sm text-gray-500 mt-2">
-            Este curso é educacional. Investimentos envolvem riscos. Rentabilidade passada não garante resultados
-            futuros.
+            This course is educational. Investments involve risks. Past performance does not guarantee
+            future results.
           </p>
         </div>
       </footer>

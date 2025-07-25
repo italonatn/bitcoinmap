@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Loader2, TrendingUp, TrendingDown, Calculator, AlertCircle, Info } from "lucide-react"
-import { calculateBitcoinInvestment } from "@/app/actions/bitcoin" // A chamada para a action permanece a mesma
+import { calculateBitcoinInvestment } from "@/app/actions/bitcoin" // The action call remains the same
 import { format, parseISO } from "date-fns"
 
 interface CalculatorResult {
@@ -55,11 +55,11 @@ export function BitcoinCalculator() {
 
   const validateInputs = (investmentAmount: number, dateString: string): string | null => {
     if (!investmentAmount || investmentAmount <= 0) {
-      return "Por favor, insira um valor válido para investir (maior que $0)."
+      return "Please enter a valid amount to invest (greater than $0)."
     }
 
     if (!dateString) {
-      return "Por favor, selecione uma data de investimento."
+      return "Please select an investment date."
     }
 
     const date = parseISO(dateString)
@@ -67,13 +67,13 @@ export function BitcoinCalculator() {
     const minDate = new Date("2010-07-17")
 
     if (isNaN(date.getTime())) {
-      return "Data de investimento inválida."
+      return "Invalid investment date."
     }
     if (date > currentDate) {
-      return "A data de investimento não pode ser no futuro."
+      return "Investment date cannot be in the future."
     }
     if (date < minDate) {
-      return `Dados históricos disponíveis apenas a partir de ${formatDate(minDate)}.`
+      return `Historical data available only from ${formatDate(minDate)}.`
     }
 
     return null
@@ -93,7 +93,7 @@ export function BitcoinCalculator() {
         throw new Error(validationError)
       }
 
-      // Chama a Server Action (que agora usa CryptoCompare nos bastidores)
+      // Calls the Server Action (which now uses CryptoCompare behind the scenes)
       const { result: calculationResult, error: serverError } = await calculateBitcoinInvestment(
         investmentAmount,
         investmentDate,
@@ -107,17 +107,17 @@ export function BitcoinCalculator() {
         setResult(calculationResult)
         setChartData(calculationResult.chartData)
       } else {
-        throw new Error("Não foi possível obter o resultado do cálculo.")
+        throw new Error("Could not obtain calculation result.")
       }
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Erro desconhecido ao calcular investimento"
+      const errorMessage = err instanceof Error ? err.message : "Unknown error when calculating investment"
       setError(errorMessage)
     } finally {
       setLoading(false)
     }
   }
 
-  // Renderizar gráfico quando dados estão disponíveis
+  // Render chart when data is available
   useEffect(() => {
     if (chartData.length === 2 && chartRef.current && result) {
       if (chartInstanceRef.current) {
@@ -144,7 +144,7 @@ export function BitcoinCalculator() {
               labels: chartData.map((d) => d.date),
               datasets: [
                 {
-                  label: "Valor do Investimento (USD)",
+                  label: "Investment Value (USD)",
                   data: chartData.map((d) => d.price),
                   borderColor: "#f97316",
                   backgroundColor: "rgba(249, 115, 22, 0.1)",
@@ -171,20 +171,20 @@ export function BitcoinCalculator() {
                   borderColor: "#f97316",
                   borderWidth: 1,
                   callbacks: {
-                    label: (context) => `Valor: ${formatCurrency(context.parsed.y)}`,
+                    label: (context) => `Value: ${formatCurrency(context.parsed.y)}`,
                   },
                 },
               },
               scales: {
                 x: {
                   display: true,
-                  title: { display: true, text: "Data", color: "#6b7280" },
+                  title: { display: true, text: "Date", color: "#6b7280" },
                   ticks: { color: "#6b7280" },
                   grid: { color: "rgba(107, 114, 128, 0.1)" },
                 },
                 y: {
                   display: true,
-                  title: { display: true, text: "Valor (USD)", color: "#6b7280" },
+                  title: { display: true, text: "Value (USD)", color: "#6b7280" },
                   ticks: { color: "#6b7280", callback: (value) => formatCurrency(Number(value)) },
                   grid: { color: "rgba(107, 114, 128, 0.1)" },
                   min: minPrice - priceRange * 0.1,
@@ -195,7 +195,7 @@ export function BitcoinCalculator() {
             },
           })
         } catch (chartError) {
-          console.warn("Erro ao carregar Chart.js:", chartError)
+          console.warn("Error loading Chart.js:", chartError)
         }
       }
       loadChart()
@@ -225,18 +225,18 @@ export function BitcoinCalculator() {
   return (
     <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-8">
       <h3 className="text-2xl font-bold text-blue-800 mb-6 text-center flex items-center justify-center gap-2">
-        <Calculator className="w-6 h-6" /> Se você tivesse investido em Bitcoin na primeira vez que ouviu falar — quando
-        seria? Faça a simulação pra ver quanto você deixou escapar...
+        <Calculator className="w-6 h-6" /> If you had invested in Bitcoin the first time you heard about it — when was that? 
+        Run the simulation to see how much you let slip away...
       </h3>
 
       <div className="grid md:grid-cols-2 gap-8">
-        {/* Formulário */}
+        {/* Form */}
         <Card className="bg-white shadow-lg">
           <CardContent className="p-6">
             <div className="space-y-4">
               <div>
                 <label htmlFor="investmentDate" className="block text-sm font-medium text-gray-700 mb-2">
-                  Coloque aqui o mês/ano — em média — da primeira vez que ouviu falar*
+                  Enter the month/year — on average — when you first heard about it*
                 </label>
                 <input
                   id="investmentDate"
@@ -254,7 +254,7 @@ export function BitcoinCalculator() {
 
               <div>
                 <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-2">
-                  Valor hipotético que teria investido (USD)*
+                  Hypothetical amount you would have invested (USD)*
                 </label>
                 <input
                   id="amount"
@@ -278,10 +278,10 @@ export function BitcoinCalculator() {
                 {loading ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    Calculando...
+                    Calculating...
                   </>
                 ) : (
-                  "Simular Investimento"
+                  "Simulate Investment"
                 )}
               </Button>
 
@@ -289,10 +289,10 @@ export function BitcoinCalculator() {
                 <div className="flex items-start gap-2">
                   <Info className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
                   <div className="text-xs text-blue-700">
-                    <p className="font-medium mb-1">Como funciona:</p>
-                    <p>• Calculamos quanto Bitcoin você teria comprado na data informada.</p>
-                    <p>• Comparamos com o valor atual do Bitcoin.</p>
-                    <p>• Mostramos seu lucro ou prejuízo hipotético.</p>
+                    <p className="font-medium mb-1">How it works:</p>
+                    <p>• We calculate how much Bitcoin you would have bought on the given date.</p>
+                    <p>• We compare it with Bitcoin's current value.</p>
+                    <p>• We show your hypothetical profit or loss.</p>
                   </div>
                 </div>
               </div>
@@ -300,14 +300,14 @@ export function BitcoinCalculator() {
           </CardContent>
         </Card>
 
-        {/* Resultados */}
+        {/* Results */}
         <Card className="bg-white shadow-lg">
           <CardContent className="p-6">
             {error && (
               <div className="bg-red-50 border border-red-200 rounded-md p-4 mb-4">
                 <div className="flex items-center gap-2 text-red-800">
                   <AlertCircle className="w-5 h-5" />
-                  <span className="font-medium">Erro</span>
+                  <span className="font-medium">Error</span>
                 </div>
                 <p className="text-red-700 mt-1 text-sm">{error}</p>
               </div>
@@ -315,23 +315,23 @@ export function BitcoinCalculator() {
 
             {result && (
               <div className="space-y-4">
-                <h4 className="font-bold text-lg text-gray-800 mb-4">Resultado da Simulação</h4>
+                <h4 className="font-bold text-lg text-gray-800 mb-4">Simulation Results</h4>
 
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div className="bg-gray-50 p-3 rounded-lg">
-                    <div className="text-gray-600 text-xs">Valor Investido</div>
+                    <div className="text-gray-600 text-xs">Amount Invested</div>
                     <div className="font-bold text-lg">{formatCurrency(result.initialValue)}</div>
                   </div>
                   <div className="bg-gray-50 p-3 rounded-lg">
-                    <div className="text-gray-600 text-xs">BTC Comprado</div>
+                    <div className="text-gray-600 text-xs">BTC Purchased</div>
                     <div className="font-bold text-lg">{formatBTC(result.btcAmount)}</div>
                   </div>
                   <div className="bg-gray-50 p-3 rounded-lg">
-                    <div className="text-gray-600 text-xs">Preço BTC Inicial</div>
+                    <div className="text-gray-600 text-xs">Initial BTC Price</div>
                     <div className="font-bold">{formatCurrency(result.initialPrice)}</div>
                   </div>
                   <div className="bg-gray-50 p-3 rounded-lg">
-                    <div className="text-gray-600 text-xs">Preço BTC Atual</div>
+                    <div className="text-gray-600 text-xs">Current BTC Price</div>
                     <div className="font-bold">{formatCurrency(result.currentPrice)}</div>
                   </div>
                 </div>
@@ -341,7 +341,7 @@ export function BitcoinCalculator() {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-600">Valor Final</div>
+                      <div className="text-sm text-gray-600">Final Value</div>
                       <div className="font-bold text-xl">{formatCurrency(result.finalValue)}</div>
                     </div>
                     <div className="text-right">
@@ -364,16 +364,16 @@ export function BitcoinCalculator() {
 
                 <div className="text-xs text-gray-500 mt-4 bg-gray-50 p-3 rounded">
                   <p>
-                    <strong>Período:</strong> {result.periodInDays} dias
+                    <strong>Period:</strong> {result.periodInDays} days
                   </p>
                   <p>
-                    <strong>Data inicial:</strong> {formatDate(parseISO(investmentDate))}
+                    <strong>Initial date:</strong> {formatDate(parseISO(investmentDate))}
                   </p>
                   <p>
-                    <strong>Data atual:</strong> {formatDate(new Date())}
+                    <strong>Current date:</strong> {formatDate(new Date())}
                   </p>
                   <p>
-                    <strong>Fonte dos Dados:</strong> CryptoCompare API
+                    <strong>Data Source:</strong> CryptoCompare API
                   </p>
                 </div>
               </div>
@@ -382,40 +382,40 @@ export function BitcoinCalculator() {
             {!result && !error && !loading && (
               <div className="text-center text-gray-500 py-8">
                 <Calculator className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                <p className="text-sm">Preencha os campos e clique em "Simular Investimento"</p>
-                <p className="text-xs text-gray-400 mt-2">Simule o retorno de um investimento em Bitcoin.</p>
+                <p className="text-sm">Fill in the fields and click "Simulate Investment"</p>
+                <p className="text-xs text-gray-400 mt-2">Simulate the return on a Bitcoin investment.</p>
               </div>
             )}
           </CardContent>
         </Card>
       </div>
 
-      {/* Gráfico */}
+      {/* Chart */}
       {chartData.length === 2 && result && (
         <Card className="mt-8 bg-white shadow-lg">
           <CardContent className="p-6">
             <h4 className="font-bold text-lg text-gray-800 mb-4 flex items-center gap-2">
-              <TrendingUp className="w-5 h-5" /> Projeção Linear do Investimento
+              <TrendingUp className="w-5 h-5" /> Linear Investment Projection
             </h4>
             <div className="h-64 relative">
               <canvas ref={chartRef} className="w-full h-full"></canvas>
             </div>
             <div className="mt-4 text-sm text-gray-600 text-center bg-gray-50 p-3 rounded">
               <p>
-                Este gráfico mostra uma projeção linear simples entre o valor na data do investimento e o valor atual.
+                This chart shows a simple linear projection between the value on the investment date and the current value.
               </p>
               <p>
-                <strong>Período:</strong> {result.periodInDays} dias • <strong>Fonte dos Dados:</strong> CryptoCompare
+                <strong>Period:</strong> {result.periodInDays} days • <strong>Data Source:</strong> CryptoCompare
               </p>
             </div>
           </CardContent>
         </Card>
       )}
 
-      {/* Aviso Legal */}
+      {/* Legal Notice */}
       <div className="mt-8 text-xs text-gray-500 text-center bg-white p-4 rounded-lg border">
         <p>
-          <strong>⚠️ Aviso Legal:</strong> Esta é uma simulação para fins educacionais, baseada em dados históricos da
+          <strong>⚠️ Legal Notice:</strong> This is a simulation for educational purposes, based on historical data from
           CryptoCompare.
         </p>
       </div>
