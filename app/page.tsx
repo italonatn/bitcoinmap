@@ -86,11 +86,11 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <p className="text-white leading-relaxed">
-                  Hi! I'm <strong>Ashley Harper</strong>, and I'm a <strong>Certified Financial Planner (CFP®)</strong>
-                  . My passion for finance arose from something very personal: seeing firsthand the impact that good financial
-                  planning had on my own family. That's when I realized how much this security and freedom can
-                  transform lives, and that drove me to dedicate my career to helping other people feel the
-                  same.
+                  Hi! I'm <strong>Ashley Harper</strong>, and I'm a <strong>Certified Financial Planner (CFP®)</strong>. My passion for finance arose from a pivotal moment on February 13, 2019. That day, I had $8,700—<strong>all my savings at the time</strong>—when I first heard about Bitcoin. The thought of investing crossed my mind, but lacking the necessary knowledge and courage, I hesitated. Today, those same $8,700, if invested back then, would be worth an astonishing average of <strong>$294,856.27</strong>.
+                </p>  
+
+                <p className="text-white leading-relaxed">
+                  Seeing that incredible missed opportunity firsthand was a profound frustration. It showed me how much the right knowledge and courage can transform lives, and that experience truly drove me to dedicate my career to helping other people not just understand, but act on opportunities like these, achieving that same financial security and freedom I now champion.
                 </p>
 
                 <p className="text-white leading-relaxed">
@@ -128,7 +128,7 @@ export default function LandingPage() {
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center justify-center gap-2">
                       <Shield className="w-4 h-4 text-orange-600" />
-                      <span>11 years of experience</span>
+                      <span>4 years of experience</span>
                     </div>
                     <div className="flex items-center justify-center gap-2">
                       <TrendingUp className="w-4 h-4 text-orange-600" />
