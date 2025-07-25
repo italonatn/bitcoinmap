@@ -359,8 +359,8 @@ export default function LandingPage() {
 
             <div className="bg-white text-gray-900 rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
               <div className="text-center mb-6">
-                <div className="text-sm text-gray-500 line-through mb-2">From $197 for</div>
-                <div className="text-6xl font-bold text-orange-600 mb-2">$47</div>
+                <div className="text-sm text-gray-500 line-through mb-2">From $49 for</div>
+                <div className="text-6xl font-bold text-orange-600 mb-2">$14</div>
                 <div className="text-lg text-gray-600">One-time payment • No monthly fees</div>
               </div>
 
@@ -395,7 +395,7 @@ export default function LandingPage() {
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-orange-600 hover:bg-orange-700 text-white py-4 text-xl font-bold rounded-lg shadow-xl mb-4"
               >
-                👉 I Want to Start Investing in Bitcoin for $47!
+                👉 I Want to Start Investing in Bitcoin for $14!
               </a>
 
               <div className="text-sm text-gray-500">
