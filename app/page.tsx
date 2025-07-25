@@ -338,7 +338,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span>Canais de suporte via: e-mail, telegram e whatsapp</span>
+                  <span>Suporte via e-mail, telegram e whatsapp</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />

@@ -236,7 +236,7 @@ export function BitcoinCalculator() {
             <div className="space-y-4">
               <div>
                 <label htmlFor="investmentDate" className="block text-sm font-medium text-gray-700 mb-2">
-                  Coloaque aqui o mês/ano — em média — da primeira vez que ouviu falar*
+                  Coloque aqui o mês/ano — em média — da primeira vez que ouviu falar*
                 </label>
                 <input
                   id="investmentDate"
