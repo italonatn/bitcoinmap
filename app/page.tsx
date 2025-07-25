@@ -425,10 +425,12 @@ export default function LandingPage() {
       <section className="bg-orange-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">O que você está esperando?</h2>
-            <p className="text-xl mb-8">
-              Por menos que o preço de um lanche, você pode mudar sua relação com o dinheiro e entrar no mercado que
-              está revolucionando o mundo.
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">Costumo dizer que existem dois tipos de pessoas no mundo de hoje:</h2>
+            <p className="text-l mb-8">
+              O Tipo 1: Aquelas que veem a revolução do Bitcoin acontecer, mas não tomam a decisão e não criam a coragem de investir. São as pessoas que, mesmo diante de todas as evidências de valorização e potencial, preferem a inércia. Elas vivem presas à rotina, lamentando as oportunidades perdidas, assistindo de camarote enquanto o futuro financeiro se desenha para os outros. Dia após dia, a insegurança financeira persiste, os sonhos ficam na gaveta e a sensação de "ter perdido o bonde" se instala, condenando-as a uma vida de frustração, dependência e arrependimento por não terem agido quando podiam.
+            </p>
+            <p className="text-l mb-8">
+            E o Tipo 2: São as pessoas ambiciosas, que querem mais da vida e não têm medo de ousar. Elas enxergam as oportunidades que o Bitcoin oferece e agem com inteligência e coragem. Essas são as que constroem ativamente seu futuro, garantem sua liberdade financeira e realizam sonhos que antes pareciam impossíveis. Enquanto o Tipo 1 se prende ao passado, o Tipo 2 está construindo um patrimônio robusto, viajando mais, tendo mais tempo para o que importa e vivendo com a tranquilidade de quem está no controle, à frente do seu tempo e colhendo os frutos de suas decisões ousadas e informadas.
             </p>
 
             <a
@@ -437,7 +439,7 @@ export default function LandingPage() {
               rel="noopener noreferrer"
               className="inline-block text-center bg-white text-orange-600 hover:bg-gray-100 px-12 py-4 text-xl font-bold rounded-lg shadow-xl mb-6"
             >
-              Clique Agora e Comece Sua Jornada no Bitcoin!
+              Se Você é o Tipo 2 — Clique e Comece Sua Jornada no Bitcoin!
             </a>
 
             <p className="text-orange-100">Tome o controle do seu futuro financeiro hoje!</p>
