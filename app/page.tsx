@@ -205,13 +205,15 @@ export default function LandingPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Com o Mapa do Bitcoin, você vai:</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">
+            Com o <span className="text-orange-600">Mapa do Bitcoin</span>, você vai entender:
+            </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="bg-green-50 border-green-200">
                 <CardContent className="p-6">
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-10">
                     <li className="flex items-start gap-3 text-green-700">
                       <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>O caminho DESCOMPLICADO para adquirir seu primeiro Bitcoin em menos de 10 minutos, mesmo que você nunca tenha investido antes.</span>
@@ -282,9 +284,7 @@ export default function LandingPage() {
                 <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6">
                   <h3 className="font-bold text-orange-800 mb-3">Por que agora?</h3>
                   <p className="text-orange-700">
-                    Porque o Bitcoin já valorizou milhares de por cento nos últimos anos, e especialistas apontam que
-                    ainda há muito espaço para crescer. <strong>4% dos brasileiros já investem em cripto</strong>,
-                    superando até ações. Não fique de fora dessa oportunidade por falta de conhecimento!
+                    O Bitcoin não apenas valorizou milhares de por cento, mas os especialistas globais são unânimes: o potencial explosivo ainda está à frente! Pense bem: milhões já estão migrando para as criptos, superando até mesmo mercados consolidados. Esta não é uma chance qualquer; é a oportunidade da década que você não pode perder simplesmente por não saber como agir!
                   </p>
                 </div>
               </div>
