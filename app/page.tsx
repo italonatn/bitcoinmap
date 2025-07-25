@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, TrendingUp, Users, Clock, Star, AlertTriangle, Gift } from "lucide-react"
+import { CheckCircle, Shield, TrendingUp, Users, Star, AlertTriangle, Gift } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BitcoinCalculator } from "../components/bitcoin-calculator"
@@ -8,7 +8,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Alert Bar */}
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm font-medium">
-        🚨 OFERTA POR TEMPO LIMITADO - Vagas Acabando!
+        🎁 Este presente é limitado — preste atenção para não deixar de receber!
       </div>
 
       {/* Hero Section */}
@@ -16,7 +16,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <AlertTriangle className="w-4 h-4" />
-            Atenção: Você Está Perdendo Dinheiro Enquanto Fica Parado!
+            Atenção: Pessoas Comuns Estão Mudando de Vida Enquanto Você Fica Parado!
           </div>
 
           <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -24,9 +24,9 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-xl lg:text-2xl text-orange-600 font-bold mb-6">
-            Não deixe o medo ou a falta de conhecimento te pararem!{" "}
-            <span className="text-3xl bg-yellow-200 px-2 py-1 rounded">Por apenas R$47</span> você aprende tudo para
-            investir em Bitcoin com segurança!
+            Não deixe o medo ou a falta de conhecimento te pararem! Com esse{" "}
+            <span className="text-3xl bg-yellow-200 px-2 py-1 rounded">MDB</span> você aprende tudo para investir em
+            Bitcoin com segurança!
           </p>
 
           <div className="bg-gray-50 rounded-lg p-6 mb-8 max-w-4xl mx-auto">
@@ -35,66 +35,119 @@ export default function LandingPage() {
               com medo de cair em golpes ou simplesmente não sabe por onde começar?
             </p>
             <p className="text-base text-gray-600 mb-4">
-              <strong>O Mapa do Bitcoin</strong> é o seu guia definitivo para entrar no mundo do Bitcoin com segurança,
-              mesmo que você seja 100% leigo e nunca tenha investido um centavo na vida.
+              Esse <strong>MDB</strong> será sua professora (passo a passo) para entrar no mundo do Bitcoin com
+              segurança, mesmo que você seja 100% leigo e nunca tenha investido um centavo na vida.
             </p>
             <p className="text-base text-gray-600">
-              No Brasil, criptomoedas já são o <strong>5º investimento mais popular</strong>, e o Bitcoin valorizou
+              Criptomoedas já são o <strong>4º investimento mais popular</strong> do <strong>MUNDO</strong>, e o Bitcoin
+              valorizou
               <strong> mais de 1000% em poucos anos</strong> – mas a maioria dos iniciantes perde dinheiro por não saber
               o básico.
             </p>
           </div>
 
-          <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 mb-8">
+          <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
             <h3 className="text-xl font-bold text-green-800 mb-3">
-              💡 Imagine como seria ter a confiança para investir em Bitcoin!
+              💡 Imagine como seria ter a confiança para investir em Bitcoin...
             </h3>
             <p className="text-green-700 text-lg mb-3">
-              Ver seu dinheiro render muito mais do que na poupança, que mal acompanha a inflação.
+              …watch your money grow much faster than in a regular bank account, which barely keeps up with inflation.
             </p>
             <p className="text-green-700">
-              <strong>Você não precisa de milhares de reais!</strong> Comece com apenas R$100 ou menos – sim, você pode
-              comprar frações de Bitcoin e entrar no jogo sem ser rico.
+              <strong>Você não precisa de milhares de dólares!</strong> Comece com apenas $50 ou menos – sim, você pode
+              comprar frações de Bitcoin e entrar no jogo sem ser rico — a intenção é que você se torne.
             </p>
           </div>
+        </div>
+      </section>
 
-          <a
-            href="https://pay.kiwify.com.br/tx5lvzp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-center bg-orange-600 hover:bg-orange-700 text-white px-12 py-4 text-xl font-bold rounded-lg shadow-xl mb-6"
-          >
-            👉 Quero Começar a Investir por R$47!
-          </a>
+      {/* About Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              <i>"E por que é uma decisão inteligente te escutar?"</i>
+            </h2>
 
-          <div className="flex items-center justify-center gap-6 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
-              <span>+5.000 alunos</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4" />
-              <span>Garantia 7 dias</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>Acesso imediato</span>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <p className="text-gray-700 leading-relaxed">
+                  Oi! Eu sou a <strong>Ashley Harper</strong>, e sou <strong>Certified Financial Planner (CFP®)</strong>
+                  . Minha paixão por finanças surgiu de algo bem pessoal: ver de perto o impacto que um bom planejamento
+                  financeiro teve na minha própria família. Foi aí que percebi o quanto essa segurança e liberdade podem
+                  transformar vidas, e isso me impulsionou a dedicar minha carreira a ajudar outras pessoas a sentirem o
+                  mesmo.
+                </p>
+
+                <p className="text-gray-700 leading-relaxed">
+                  Com 41 anos, já vi muita coisa no mercado e no mundo. Minha formação como CFP® me deu uma base sólida
+                  em planejamento estratégico, gestão de investimentos e análise de mercado – e sempre, sempre, com foco
+                  na ética e no que é melhor para você. Essa experiência me permite transitar com tranquilidade tanto
+                  nos investimentos mais tradicionais quanto nesse universo fascinante das criptomoedas, em especial o
+                  Bitcoin.
+                </p>
+
+                <p className="text-gray-700 leading-relaxed">
+                  Ao longo da minha jornada profissional, ficou claro pra mim a importância crescente e o potencial do
+                  Bitcoin. Meu objetivo é trazer clareza e uma orientação de qualidade para quem quer entender e, quem
+                  sabe, dar os primeiros passos nesse novo cenário.
+                </p>
+
+                <p className="text-gray-700 leading-relaxed">
+                  Eu realmente acredito que o conhecimento é a chave para a liberdade. Por isso, estou aqui para te
+                  pegar pela mão, desde seu primeiro investimento em Bitcoin, passando pelas decisões importantes, até
+                  te explicar sobre segurança nesse mundo das criptos. <strong>Vamos juntos?!</strong>
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-orange-100">
+                  <div className="w-32 h-32 bg-orange-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <div className="text-4xl font-bold text-orange-600">AH</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Ashley Harper</h3>
+                  <p className="text-orange-600 font-semibold mb-4">Certified Financial Planner (CFP®)</p>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center justify-center gap-2">
+                      <Shield className="w-4 h-4 text-orange-600" />
+                      <span>11 anos de experiência</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-orange-600" />
+                      <span>Especialista em Bitcoin</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <Users className="w-4 h-4 text-orange-600" />
+                      <span>+1.311 alunos orientados</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Course Content Section */}
+      {/* Bitcoin Calculator Section */}
       <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <BitcoinCalculator />
+          </div>
+        </div>
+      </section>
+
+      {/* Course Content Section */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                O <span className="text-orange-600">Mapa do Bitcoin</span>
+                ...por este motivo desenvolvi o <span className="text-orange-600">Mapa do Bitcoin</span>
               </h2>
               <p className="text-xl text-gray-600">
-                Um mini curso 100% digital criado especialmente para quem nunca investiu em criptomoedas e quer começar
-                do absoluto zero.
+                Um acompanhamento digital criado personalizadamente para quem nunca investiu em criptomoedas e quer
+                começar do absoluto zero.
               </p>
             </div>
 
@@ -138,22 +191,19 @@ export default function LandingPage() {
                 </CardContent>
               </Card>
             </div>
-
-            <BitcoinCalculator />
           </div>
         </div>
       </section>
 
       <div className="flex justify-center">
         <a
-          href="https://pay.kiwify.com.br/tx5lvzp"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-orange-600 hover:bg-orange-700 text-white py-4 px-8 text-xl font-bold rounded-lg shadow-xl"
+          href="#pricing"
+          className="inline-block bg-orange-600 hover:bg-orange-700 text-white py-4 px-8 text-xl font-bold rounded-lg shadow-xl transition-all duration-300 hover:scale-105"
         >
-          👉 Não perca mais tempo! Invista em Bitcoin agora!
+          👉 Não perca mais dinheiro! Aprenda a investir em Bitcoin agora!
         </a>
       </div>
+
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -246,7 +296,7 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="bg-slate-900 text-white py-16">
+      <section id="pricing" className="bg-slate-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-8">Garanta Sua Vaga Agora e Comece Hoje!</h2>

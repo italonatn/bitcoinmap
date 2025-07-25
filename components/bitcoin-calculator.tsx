@@ -39,9 +39,9 @@ export function BitcoinCalculator() {
   const chartInstanceRef = useRef<any>(null)
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("pt-BR", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "BRL",
+      currency: "USD",
     }).format(value)
   }
 
@@ -50,7 +50,7 @@ export function BitcoinCalculator() {
   }
 
   const formatDate = (date: Date) => {
-    return format(date, "dd/MM/yyyy")
+    return format(date, "MM/dd/yyyy")
   }
 
   const validateInputs = (investmentAmount: number, dateString: string): string | null => {
@@ -223,7 +223,7 @@ export function BitcoinCalculator() {
   return (
     <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-8">
       <h3 className="text-2xl font-bold text-blue-800 mb-6 text-center flex items-center justify-center gap-2">
-        <Calculator className="w-6 h-6" /> Calculadora de Investimento em Bitcoin
+        <Calculator className="w-6 h-6" /> Se você tivesse investido em Bitcoin na primeira vez que ouviu falar — quando seria? Faça a simulação pra ver quanto você deixou escapar...
       </h3>
 
       <div className="grid md:grid-cols-2 gap-8">
@@ -231,27 +231,10 @@ export function BitcoinCalculator() {
         <Card className="bg-white shadow-lg">
           <CardContent className="p-6">
             <div className="space-y-4">
-              <div>
-                <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-2">
-                  Valor a investir (BRL) *
-                </label>
-                <input
-                  id="amount"
-                  type="text"
-                  inputMode="decimal"
-                  value={amount}
-                  onChange={handleAmountChange}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Ex: 1000,00"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                  disabled={loading}
-                  required
-                />
-              </div>
 
               <div>
                 <label htmlFor="investmentDate" className="block text-sm font-medium text-gray-700 mb-2">
-                  Data do Investimento *
+                  Data para simulação *
                 </label>
                 <input
                   id="investmentDate"
@@ -267,12 +250,32 @@ export function BitcoinCalculator() {
                 />
               </div>
 
+              <div>
+                <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-2">
+                  Valor hipotético que teria investido (USD) *
+                </label>
+                <input
+                  id="amount"
+                  type="text"
+                  inputMode="decimal"
+                  value={amount}
+                  onChange={handleAmountChange}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Ex: 1,000.00"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  disabled={loading}
+                  required
+                />
+              </div>
+
+              
+
               <Button
                 onClick={calculateInvestment}
                 disabled={loading || !amount.trim() || !investmentDate.trim()}
                 className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white py-2 px-4 rounded-md font-medium transition-colors"
               >
-                {loading ? ( <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Calculando...</> ) : ( "Calcular Investimento" )}
+                {loading ? ( <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Calculando...</> ) : ( "Simular Investimento" )}
               </Button>
 
               <div className="bg-blue-50 border border-blue-200 rounded-md p-3">
