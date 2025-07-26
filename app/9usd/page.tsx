@@ -3,7 +3,7 @@
 import { CheckCircle, Shield, TrendingUp, Users, Star, AlertTriangle, Gift } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { BitcoinCalculator } from "../components/bitcoin-calculator"
+import { BitcoinCalculator } from "../../components/bitcoin-calculator"
 import { useEffect, useState } from "react"
 
 export default function LandingPage() {
@@ -367,7 +367,7 @@ export default function LandingPage() {
             <div className="bg-white text-gray-900 rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
               <div className="text-center mb-6">
                 <div className="text-sm text-gray-500 line-through mb-2">From $49 for</div>
-                <div className="text-6xl font-bold text-orange-600 mb-2">$14</div>
+                <div className="text-6xl font-bold text-orange-600 mb-2">$9</div>
                 <div className="text-lg text-gray-600">One-time payment • No monthly fees</div>
               </div>
 
@@ -397,12 +397,12 @@ export default function LandingPage() {
               </div>
 
               <a
-                href="https://mated.mycartpanda.com/checkout/190900043:1"
+                href="https://mated.mycartpanda.com/checkout/190900097:1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-orange-600 hover:bg-orange-700 text-white py-4 text-xl font-bold rounded-lg shadow-xl mb-4"
               >
-                👉 I Want to Start Investing in Bitcoin for $14!
+                👉 I Want to Start Investing in Bitcoin for $9!
               </a>
 
               <div className="text-sm text-gray-500">🔒 100% secure payment • 90-day guarantee • Immediate access</div>
@@ -488,7 +488,7 @@ export default function LandingPage() {
             </p>
 
             <a
-              href="https://mated.mycartpanda.com/checkout/190900043:1"
+              href="https://mated.mycartpanda.com/checkout/190900097:1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-center bg-white text-orange-600 hover:bg-gray-100 px-12 py-4 text-xl font-bold rounded-lg shadow-xl mb-6"
