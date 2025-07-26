@@ -89,8 +89,8 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <p className="text-white leading-relaxed">
-                  Salut ! Je suis <strong>Ashley Harper</strong>, et je suis{" "}
-                  <strong>Planificatrice Financière Certifiée (CFP®)</strong>. Ma passion pour la finance est née d'un
+                  Salut ! Je suis <strong>Claire Moreau</strong>, et je suis{" "}
+                  <strong>Conseillère en Gestion de Patrimoine certifiée (CGP®)</strong>. Ma passion pour la finance est née d'un
                   moment charnière le 13 février 2019. Ce jour-là, j'avais 8 700€—toutes mes économies à l'époque—quand
                   j'ai entendu parler du Bitcoin pour la première fois. L'idée d'investir m'a traversé l'esprit, mais
                   manquant des connaissances nécessaires et du courage, j'ai hésité. Aujourd'hui, ces mêmes 8 700€,
@@ -106,7 +106,7 @@ export default function LandingPage() {
                 </p>
 
                 <p className="text-white leading-relaxed">
-                  À 41 ans, j'ai vu beaucoup de choses sur le marché et dans le monde. Ma formation CFP® m'a donné une
+                  À 41 ans, j'ai vu beaucoup de choses sur le marché et dans le monde. Ma formation CGP® m'a donné une
                   base solide en planification stratégique, gestion d'investissements et analyse de marché – et
                   toujours, toujours, avec un focus sur l'éthique et ce qui est le mieux pour vous. Cette expérience me
                   permet de naviguer confortablement tant dans les investissements plus traditionnels que dans cet
@@ -136,8 +136,8 @@ export default function LandingPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Ashley Harper</h3>
-                  <p className="text-orange-600 font-semibold mb-4">Planificatrice Financière Certifiée (CFP®)</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Claire Moreau</h3>
+                  <p className="text-orange-600 font-semibold mb-4">Conseillère en Gestion de Patrimoine certifiée (CGP®)</p>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center justify-center gap-2">
                       <Shield className="w-4 h-4 text-orange-600" />
@@ -345,7 +345,7 @@ export default function LandingPage() {
                     </div>
                     <p className="text-gray-700 italic mb-3">
                       "Je ne comprenais rien, mais le guide étape par étape est si clair que j'ai réussi à acheter du
-                      Bitcoin dans la première semaine. Je n'ai pas de mots pour vous remercier, Ashley. J'ai investi
+                      Bitcoin dans la première semaine. Je n'ai pas de mots pour vous remercier, Claire. J'ai investi
                       peu mais ça a déjà monté !"
                     </p>
                     <p className="text-sm font-semibold">– Mariana, 29 ans, professeure</p>

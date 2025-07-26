@@ -88,8 +88,8 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <p className="text-white leading-relaxed">
-                  Ciao! Sono <strong>Ashley Harper</strong>, e sono una{" "}
-                  <strong>Pianificatrice Finanziaria Certificata (CFP®)</strong>. La mia passione per la finanza è nata
+                  Ciao! Sono <strong>Elena Bianchi</strong>, e sono una{" "}
+                  <strong>Consulente Finanziaria certificata</strong>. La mia passione per la finanza è nata
                   da un momento cruciale il 13 febbraio 2019. Quel giorno, avevo 8.700€—tutti i miei risparmi
                   all'epoca—quando ho sentito parlare di Bitcoin per la prima volta. Il pensiero di investire mi ha
                   attraversato la mente, ma mancando delle conoscenze necessarie e del coraggio, ho esitato. Oggi,
@@ -105,7 +105,7 @@ export default function LandingPage() {
                 </p>
 
                 <p className="text-white leading-relaxed">
-                  A 41 anni, ho visto molto nel mercato e nel mondo. La mia formazione CFP® mi ha dato una base solida
+                  A 41 anni, ho visto molto nel mercato e nel mondo. La mia formazione mi ha dato una base solida
                   in pianificazione strategica, gestione degli investimenti e analisi di mercato – e sempre, sempre, con
                   un focus sull'etica e su ciò che è meglio per te. Questa esperienza mi permette di navigare
                   comodamente sia negli investimenti più tradizionali che in questo affascinante universo delle
@@ -134,8 +134,8 @@ export default function LandingPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Ashley Harper</h3>
-                  <p className="text-orange-600 font-semibold mb-4">Pianificatrice Finanziaria Certificata (CFP®)</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Elena Bianchi</h3>
+                  <p className="text-orange-600 font-semibold mb-4">Consulente Finanziaria certificata</p>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center justify-center gap-2">
                       <Shield className="w-4 h-4 text-orange-600" />
@@ -341,7 +341,7 @@ export default function LandingPage() {
                     </div>
                     <p className="text-gray-700 italic mb-3">
                       "Non capivo niente, ma la guida passo dopo passo è così chiara che sono riuscita a comprare
-                      Bitcoin nella prima settimana. Non ho parole per ringraziarti, Ashley. Ho investito poco ma è già
+                      Bitcoin nella prima settimana. Non ho parole per ringraziarti, Elena. Ho investito poco ma è già
                       salito!"
                     </p>
                     <p className="text-sm font-semibold">– Mariana, 29 anni, insegnante</p>
