@@ -2,6 +2,7 @@
 
 import { format, differenceInDays, parseISO } from "date-fns"
 
+// As interfaces não mudam, pois a estrutura do resultado final é a mesma
 interface PriceData {
   price: number
   date: string
@@ -20,14 +21,26 @@ interface BitcoinCalculationResult {
   chartData: PriceData[]
 }
 
+// Chave da API e URL base para a CryptoCompare
+const CRYPTOCOMPARE_API_KEY = "e6847cc853e36059c1959b3853183fef37cabe63aa58063d656a33f06f4fd78a"
+const CRYPTOCOMPARE_BASE_URL = "https://min-api.cryptocompare.com/data"
+
+const fetchFromAPI = async (url: string) => {
+  const response = await fetch(url)
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}))
+    // A API da CryptoCompare retorna uma mensagem de erro útil no campo "Message"
+    throw new Error(errorData.Message || `Erro ${response.status}: Falha ao contatar a API da CryptoCompare.`)
+  }
+  return response.json()
+}
+
 export async function calculateBitcoinInvestmentEUR(
   investmentAmount: number,
   investmentDateString: string,
 ): Promise<{ result: BitcoinCalculationResult | null; error: string }> {
-  const apiKey = process.env.CRYPTOCOMPARE_API_KEY
-
-  if (!apiKey) {
-    return { result: null, error: "Chave da API não configurada. Entre em contato com o suporte." }
+  if (!CRYPTOCOMPARE_API_KEY) {
+    return { result: null, error: "A chave de API da CryptoCompare não está configurada no arquivo .env.local." }
   }
 
   try {
@@ -51,69 +64,32 @@ export async function calculateBitcoinInvestmentEUR(
       }
     }
 
-    // 1. Buscar o preço atual do Bitcoin em USD
-    const currentBTCResponse = await fetch(
-      `https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&api_key=${apiKey}`,
+    // 1. Buscar o preço atual em EUR
+    const currentPriceData = await fetchFromAPI(
+      `${CRYPTOCOMPARE_BASE_URL}/price?fsym=BTC&tsyms=EUR&api_key=${CRYPTOCOMPARE_API_KEY}`,
     )
+    const currentPrice = currentPriceData.EUR
 
-    if (!currentBTCResponse.ok) {
-      throw new Error("Falha ao buscar preço atual do Bitcoin")
-    }
-
-    const currentBTCData = await currentBTCResponse.json()
-    const currentBTCPriceUSD = currentBTCData.USD
-
-    if (!currentBTCPriceUSD || currentBTCPriceUSD <= 0) {
+    if (!currentPrice || currentPrice <= 0) {
       throw new Error("Não foi possível obter o preço atual do Bitcoin.")
     }
 
-    // 2. Buscar o preço histórico do Bitcoin em USD
+    // 2. Buscar o preço histórico em EUR
     const historicalTimestamp = Math.floor(initialDate.getTime() / 1000)
-    const historicalBTCResponse = await fetch(
-      `https://min-api.cryptocompare.com/data/pricehistorical?fsym=BTC&tsyms=USD&ts=${historicalTimestamp}&api_key=${apiKey}`,
+    const historicalPriceData = await fetchFromAPI(
+      `${CRYPTOCOMPARE_BASE_URL}/pricehistorical?fsym=BTC&tsyms=EUR&ts=${historicalTimestamp}&api_key=${CRYPTOCOMPARE_API_KEY}`,
     )
 
-    if (!historicalBTCResponse.ok) {
-      throw new Error("Falha ao buscar preço histórico do Bitcoin")
-    }
+    const historicalPrice = historicalPriceData.BTC?.EUR
 
-    const historicalBTCData = await historicalBTCResponse.json()
-    const historicalBTCPriceUSD = historicalBTCData.BTC?.USD
-
-    if (!historicalBTCPriceUSD || historicalBTCPriceUSD <= 0) {
+    if (!historicalPrice || historicalPrice <= 0) {
       throw new Error("Preço histórico do Bitcoin não disponível para esta data.")
     }
 
-    // 3. Buscar taxa de câmbio atual USD para EUR
-    const currentExchangeResponse = await fetch(
-      `https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=EUR&api_key=${apiKey}`,
-    )
-
-    let currentExchangeRate = 0.85 // fallback
-    if (currentExchangeResponse.ok) {
-      const currentExchangeData = await currentExchangeResponse.json()
-      currentExchangeRate = currentExchangeData.EUR || 0.85
-    }
-
-    // 4. Buscar taxa de câmbio histórica USD para EUR
-    const historicalExchangeResponse = await fetch(
-      `https://min-api.cryptocompare.com/data/pricehistorical?fsym=USD&tsyms=EUR&ts=${historicalTimestamp}&api_key=${apiKey}`,
-    )
-
-    let historicalExchangeRate = 0.85 // fallback
-    if (historicalExchangeResponse.ok) {
-      const historicalExchangeData = await historicalExchangeResponse.json()
-      historicalExchangeRate = historicalExchangeData.USD?.EUR || 0.85
-    }
-
-    // 5. Converter preços de USD para EUR
-    const currentBTCPriceEUR = currentBTCPriceUSD * currentExchangeRate
-    const historicalBTCPriceEUR = historicalBTCPriceUSD * historicalExchangeRate
-
-    // 6. Cálculos em EUR
+    // Cálculos
     const periodInDays = differenceInDays(currentDate, initialDate)
-    const btcAmount = investmentAmount / historicalBTCPriceEUR
-    const finalValue = btcAmount * currentBTCPriceEUR
+    const btcAmount = investmentAmount / historicalPrice
+    const finalValue = btcAmount * currentPrice
     const profit = finalValue - investmentAmount
     const profitPercentage = ((finalValue - investmentAmount) / investmentAmount) * 100
 
@@ -128,8 +104,8 @@ export async function calculateBitcoinInvestmentEUR(
       finalValue,
       profit,
       profitPercentage,
-      initialPrice: historicalBTCPriceEUR,
-      currentPrice: currentBTCPriceEUR,
+      initialPrice: historicalPrice,
+      currentPrice,
       periodInDays,
       chartData,
     }
