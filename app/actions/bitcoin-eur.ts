@@ -1,14 +1,8 @@
 "use server"
 
-import { format, differenceInDays, parseISO } from "date-fns"
+import { format, parseISO } from "date-fns"
 
-interface PriceData {
-  price: number
-  date: string
-  timestamp: number
-}
-
-interface BitcoinCalculationResult {
+interface CalculatorResult {
   initialValue: number
   btcAmount: number
   finalValue: number
@@ -20,133 +14,143 @@ interface BitcoinCalculationResult {
   chartData: PriceData[]
 }
 
-// Usar a mesma chave da API original
-const CRYPTOCOMPARE_API_KEY = process.env.CRYPTOCOMPARE_API_KEY
-const CRYPTOCOMPARE_BASE_URL = "https://min-api.cryptocompare.com/data"
-
-const fetchFromAPI = async (url: string) => {
-  const response = await fetch(url)
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}))
-    throw new Error(errorData.Message || `Erro ${response.status}: Falha ao contatar a API da CryptoCompare.`)
-  }
-  return response.json()
+interface PriceData {
+  price: number
+  date: string
+  timestamp: number
 }
 
-// Função para converter USD para EUR usando taxa de câmbio atual
-const convertUSDToEUR = async (usdAmount: number): Promise<number> => {
+// Função para buscar taxa de câmbio USD para EUR
+async function getExchangeRate(date?: string): Promise<number> {
   try {
-    // Buscar taxa de câmbio USD/EUR atual
-    const exchangeRateData = await fetchFromAPI(
-      `${CRYPTOCOMPARE_BASE_URL}/price?fsym=USD&tsyms=EUR&api_key=${CRYPTOCOMPARE_API_KEY}`,
-    )
-    const usdToEurRate = exchangeRateData.EUR
-    return usdAmount * usdToEurRate
-  } catch (error) {
-    // Se falhar, usar uma taxa aproximada (0.85 é uma estimativa conservadora)
-    console.warn("Erro ao buscar taxa de câmbio, usando taxa aproximada:", error)
-    return usdAmount * 0.85
-  }
-}
+    const apiKey = process.env.CRYPTOCOMPARE_API_KEY
+    if (!apiKey) {
+      console.warn("CryptoCompare API key not found, using fallback rate")
+      return 0.85 // Taxa aproximada USD para EUR
+    }
 
-// Função para buscar taxa de câmbio histórica USD/EUR
-const getHistoricalExchangeRate = async (timestamp: number): Promise<number> => {
-  try {
-    const historicalExchangeData = await fetchFromAPI(
-      `${CRYPTOCOMPARE_BASE_URL}/pricehistorical?fsym=USD&tsyms=EUR&ts=${timestamp}&api_key=${CRYPTOCOMPARE_API_KEY}`,
-    )
-    const historicalRate = historicalExchangeData.USD?.EUR
-    return historicalRate || 0.85 // fallback para taxa aproximada
+    let url: string
+    if (date) {
+      // Taxa histórica
+      const timestamp = Math.floor(new Date(date).getTime() / 1000)
+      url = `https://min-api.cryptocompare.com/data/pricehistorical?fsym=USD&tsyms=EUR&ts=${timestamp}&api_key=${apiKey}`
+    } else {
+      // Taxa atual
+      url = `https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=EUR&api_key=${apiKey}`
+    }
+
+    const response = await fetch(url)
+    const data = await response.json()
+
+    if (date) {
+      return data.USD?.EUR || 0.85
+    } else {
+      return data.EUR || 0.85
+    }
   } catch (error) {
-    console.warn("Erro ao buscar taxa de câmbio histórica, usando taxa aproximada:", error)
-    return 0.85 // fallback
+    console.warn("Error fetching exchange rate:", error)
+    return 0.85 // Taxa de fallback
   }
 }
 
 export async function calculateBitcoinInvestmentEUR(
   investmentAmount: number,
-  investmentDateString: string,
-): Promise<{ result: BitcoinCalculationResult | null; error: string }> {
-  if (!CRYPTOCOMPARE_API_KEY) {
-    return { result: null, error: "A chave de API da CryptoCompare não está configurada no arquivo .env.local." }
-  }
-
+  investmentDate: string,
+): Promise<{ result: CalculatorResult | null; error: string | null }> {
   try {
-    // Converter YYYY-MM para uma data completa (primeiro dia do mês)
-    const dateWithDay =
-      investmentDateString.includes("-") && investmentDateString.split("-").length === 2
-        ? `${investmentDateString}-01`
-        : investmentDateString
-
-    const initialDate = parseISO(dateWithDay)
-    const currentDate = new Date()
-
-    const bitcoinStartDate = new Date("2010-07-17")
-    if (initialDate > currentDate) {
-      return { result: null, error: "A data de investimento não pode ser no futuro." }
-    }
-    if (initialDate < bitcoinStartDate) {
+    const apiKey = process.env.CRYPTOCOMPARE_API_KEY
+    if (!apiKey) {
       return {
         result: null,
-        error: `Dados históricos de Bitcoin disponíveis apenas a partir de ${format(bitcoinStartDate, "MM/yyyy")}.`,
+        error: "API key não configurada. Entre em contato com o suporte.",
       }
     }
 
-    // 1. Buscar o preço atual do Bitcoin em USD
-    const currentBTCPriceData = await fetchFromAPI(
-      `${CRYPTOCOMPARE_BASE_URL}/price?fsym=BTC&tsyms=USD&api_key=${CRYPTOCOMPARE_API_KEY}`,
-    )
-    const currentBTCPriceUSD = currentBTCPriceData.USD
+    // Parse da data de investimento (assumindo primeiro dia do mês)
+    const investmentDateObj = parseISO(`${investmentDate}-01`)
+    const investmentTimestamp = Math.floor(investmentDateObj.getTime() / 1000)
+    const currentDate = new Date()
 
-    if (!currentBTCPriceUSD || currentBTCPriceUSD <= 0) {
-      throw new Error("Não foi possível obter o preço atual do Bitcoin.")
+    // Buscar preço histórico do Bitcoin em USD
+    const historicalUrl = `https://min-api.cryptocompare.com/data/pricehistorical?fsym=BTC&tsyms=USD&ts=${investmentTimestamp}&api_key=${apiKey}`
+    const historicalResponse = await fetch(historicalUrl)
+    const historicalData = await historicalResponse.json()
+
+    if (!historicalData.BTC?.USD) {
+      return {
+        result: null,
+        error: "Não foi possível obter dados históricos do Bitcoin para esta data.",
+      }
     }
 
-    // 2. Buscar o preço histórico do Bitcoin em USD
-    const historicalTimestamp = Math.floor(initialDate.getTime() / 1000)
-    const historicalBTCPriceData = await fetchFromAPI(
-      `${CRYPTOCOMPARE_BASE_URL}/pricehistorical?fsym=BTC&tsyms=USD&ts=${historicalTimestamp}&api_key=${CRYPTOCOMPARE_API_KEY}`,
-    )
+    // Buscar preço atual do Bitcoin em USD
+    const currentUrl = `https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&api_key=${apiKey}`
+    const currentResponse = await fetch(currentUrl)
+    const currentData = await currentResponse.json()
 
-    const historicalBTCPriceUSD = historicalBTCPriceData.BTC?.USD
-
-    if (!historicalBTCPriceUSD || historicalBTCPriceUSD <= 0) {
-      throw new Error("Preço histórico do Bitcoin não disponível para esta data.")
+    if (!currentData.USD) {
+      return {
+        result: null,
+        error: "Não foi possível obter o preço atual do Bitcoin.",
+      }
     }
 
-    // 3. Converter preços de USD para EUR
-    const currentBTCPriceEUR = await convertUSDToEUR(currentBTCPriceUSD)
-    const historicalExchangeRate = await getHistoricalExchangeRate(historicalTimestamp)
-    const historicalBTCPriceEUR = historicalBTCPriceUSD * historicalExchangeRate
+    const initialPriceUSD = historicalData.BTC.USD
+    const currentPriceUSD = currentData.USD
 
-    // 4. Cálculos em EUR
-    const periodInDays = differenceInDays(currentDate, initialDate)
-    const btcAmount = investmentAmount / historicalBTCPriceEUR
-    const finalValue = btcAmount * currentBTCPriceEUR
+    // Buscar taxas de câmbio
+    const historicalExchangeRate = await getExchangeRate(format(investmentDateObj, "yyyy-MM-dd"))
+    const currentExchangeRate = await getExchangeRate()
+
+    // Converter preços para EUR
+    const initialPriceEUR = initialPriceUSD * historicalExchangeRate
+    const currentPriceEUR = currentPriceUSD * currentExchangeRate
+
+    // Calcular quantidade de Bitcoin que seria comprada
+    const btcAmount = investmentAmount / initialPriceEUR
+
+    // Calcular valor final em EUR
+    const finalValue = btcAmount * currentPriceEUR
+
+    // Calcular lucro/prejuízo
     const profit = finalValue - investmentAmount
-    const profitPercentage = ((finalValue - investmentAmount) / investmentAmount) * 100
+    const profitPercentage = (profit / investmentAmount) * 100
 
+    // Calcular período em dias
+    const periodInDays = Math.floor((currentDate.getTime() - investmentDateObj.getTime()) / (1000 * 60 * 60 * 24))
+
+    // Dados para o gráfico (valores em EUR)
     const chartData: PriceData[] = [
-      { price: investmentAmount, date: format(initialDate, "MM/yyyy"), timestamp: initialDate.getTime() },
-      { price: finalValue, date: format(currentDate, "MM/yyyy"), timestamp: currentDate.getTime() },
+      {
+        price: investmentAmount,
+        date: format(investmentDateObj, "dd/MM/yyyy"),
+        timestamp: investmentTimestamp,
+      },
+      {
+        price: finalValue,
+        date: format(currentDate, "dd/MM/yyyy"),
+        timestamp: Math.floor(currentDate.getTime() / 1000),
+      },
     ]
 
-    const result: BitcoinCalculationResult = {
+    const result: CalculatorResult = {
       initialValue: investmentAmount,
       btcAmount,
       finalValue,
       profit,
       profitPercentage,
-      initialPrice: historicalBTCPriceEUR,
-      currentPrice: currentBTCPriceEUR,
+      initialPrice: initialPriceEUR,
+      currentPrice: currentPriceEUR,
       periodInDays,
       chartData,
     }
 
-    return { result, error: "" }
-  } catch (err) {
-    const errorMessage = err instanceof Error ? err.message : "Erro desconhecido ao calcular investimento."
-    console.error("Calculation Error:", errorMessage)
-    return { result: null, error: errorMessage }
+    return { result, error: null }
+  } catch (error) {
+    console.error("Error calculating Bitcoin investment:", error)
+    return {
+      result: null,
+      error: "Erro interno do servidor. Tente novamente mais tarde.",
+    }
   }
 }
