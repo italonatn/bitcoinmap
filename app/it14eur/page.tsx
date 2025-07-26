@@ -404,7 +404,7 @@ export default function LandingPage() {
               </div>
 
               <a
-                href="https://mated.mycartpanda.com/checkout/190900043:1"
+                href="https://mated.mycartpanda.com/checkout/190900768:1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-orange-600 hover:bg-orange-700 text-white py-4 text-xl font-bold rounded-lg shadow-xl mb-4"
@@ -498,7 +498,7 @@ export default function LandingPage() {
             </p>
 
             <a
-              href="https://mated.mycartpanda.com/checkout/190900043:1"
+              href="https://mated.mycartpanda.com/checkout/190900768:1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-center bg-white text-orange-600 hover:bg-gray-100 px-12 py-4 text-xl font-bold rounded-lg shadow-xl mb-6"
