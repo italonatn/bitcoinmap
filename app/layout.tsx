@@ -22,7 +22,24 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  data-utmify-ignore-iframe
+  data-utmify-is-cartpanda
+  async
+  defer
+></script>
 
+<script>
+  window.pixelId = "6885892192a50b07f8634c53";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
 
         <Script src="https://cdn.jsdelivr.net/npm/chart.js" strategy="beforeInteractive" />
       </head>
