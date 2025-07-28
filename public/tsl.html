@@ -1,433 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Map - Start Investing with $50</title>
+    <title>Player de Vídeo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #f7931a 0%, #f2a900 100%);
+        /* Espaço para CSS personalizado se necessário */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
         }
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .roadmap-step::before {
-            content: '';
+        .video-container iframe {
             position: absolute;
-            left: 20px;
             top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            width: 2px;
-            background-color: #f7931a;
-            z-index: 1;
-        }
-        .roadmap-step:last-child::before {
-            display: none;
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans">
-    <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center mb-4 md:mb-0">
-                    <i class="fab fa-bitcoin text-4xl mr-3"></i>
-                    <h1 class="text-2xl md:text-3xl font-bold">Bitcoin Map</h1>
-                </div>
-                <nav class="flex space-x-6">
-                    <a href="#start" class="hover:text-yellow-200 font-medium">Start</a>
-                    <a href="#roadmap" class="hover:text-yellow-200 font-medium">Roadmap</a>
-                    <a href="#exchanges" class="hover:text-yellow-200 font-medium">Exchanges</a>
-                    <a href="#faq" class="hover:text-yellow-200 font-medium">FAQ</a>
-                </nav>
-            </div>
-        </div>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <header class="bg-blue-600 text-white py-6 shadow-md">
+    
     </header>
 
-    <!-- Hero Section -->
-    <section id="start" class="py-16 px-4">
-        <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Start Your Bitcoin Journey with Just $50</h2>
-                <p class="text-lg text-gray-600 mb-8">Bitcoin is for everyone. You don't need thousands of dollars to begin. Our Bitcoin Map guides you through your first investment, no matter how small.</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#roadmap" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-center pulse-animation">
-                        <i class="fas fa-map-marked-alt mr-2"></i> Begin Your Journey
-                    </a>
-                    <a href="#faq" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-lg text-center">
-                        <i class="fas fa-question-circle mr-2"></i> Learn More
-                    </a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <i class="fab fa-bitcoin text-9xl text-orange-500"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Invest Section -->
-    <section class="bg-white py-16 px-4 shadow-inner">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Start Small with Bitcoin?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="text-orange-500 text-4xl mb-4">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Low Barrier to Entry</h3>
-                    <p class="text-gray-600">You can buy fractions of Bitcoin (called satoshis). Even $50 can get you started in the Bitcoin ecosystem.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="text-orange-500 text-4xl mb-4">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Learn by Doing</h3>
-                    <p class="text-gray-600">Starting small lets you learn about Bitcoin, wallets, and exchanges without significant risk.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="text-orange-500 text-4xl mb-4">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Dollar-Cost Averaging</h3>
-                    <p class="text-gray-600">Small, regular investments can help smooth out volatility over time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="py-16 px-4 bg-gray-50">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Your Bitcoin Investment Roadmap</h2>
-            
-            <div class="max-w-3xl mx-auto">
-                <!-- Step 1 -->
-                <div class="roadmap-step relative pl-16 pb-12">
-                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center z-10">
-                        <span class="font-bold">1</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Choose a Bitcoin Exchange</h3>
-                        <p class="text-gray-600 mb-4">Select a reputable exchange that allows small purchases (see our recommendations below).</p>
-                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                            <p class="text-yellow-700"><i class="fas fa-lightbulb mr-2"></i> Look for exchanges with low minimum deposits and reasonable fees.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="roadmap-step relative pl-16 pb-12">
-                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center z-10">
-                        <span class="font-bold">2</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Create and Verify Your Account</h3>
-                        <p class="text-gray-600 mb-4">Sign up and complete identity verification (KYC process). This usually requires:</p>
-                        <ul class="list-disc pl-5 text-gray-600 mb-4">
-                            <li>Government-issued ID</li>
-                            <li>Proof of address</li>
-                            <li>Sometimes a selfie</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="roadmap-step relative pl-16 pb-12">
-                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center z-10">
-                        <span class="font-bold">3</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Deposit Funds</h3>
-                        <p class="text-gray-600 mb-4">Add money to your exchange account using your preferred payment method (bank transfer, debit card, etc.).</p>
-                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
-                            <p class="text-blue-700"><i class="fas fa-info-circle mr-2"></i> Some exchanges allow purchases directly with a card, skipping the deposit step.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="roadmap-step relative pl-16 pb-12">
-                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center z-10">
-                        <span class="font-bold">4</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Buy Bitcoin</h3>
-                        <p class="text-gray-600 mb-4">Navigate to the trading section and purchase Bitcoin with your deposited funds.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div class="bg-green-50 p-3 rounded border border-green-200">
-                                <p class="font-semibold text-green-800">Market Order</p>
-                                <p class="text-sm text-gray-600">Buy immediately at current price</p>
-                            </div>
-                            <div class="bg-purple-50 p-3 rounded border border-purple-200">
-                                <p class="font-semibold text-purple-800">Limit Order</p>
-                                <p class="text-sm text-gray-600">Set your desired price and wait</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Step 5 -->
-                <div class="roadmap-step relative pl-16 pb-12">
-                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center z-10">
-                        <span class="font-bold">5</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Secure Your Investment</h3>
-                        <p class="text-gray-600 mb-4">For long-term holding, transfer your Bitcoin to a personal wallet.</p>
-                        <div class="bg-red-50 border-l-4 border-red-400 p-4">
-                            <p class="text-red-700"><i class="fas fa-shield-alt mr-2"></i> Important: Leaving coins on exchanges carries risk. Learn about self-custody.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Step 6 -->
-                <div class="roadmap-step relative pl-16">
-                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center z-10">
-                        <span class="font-bold">6</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Repeat and Learn</h3>
-                        <p class="text-gray-600">Consider setting up recurring small purchases (DCA) and continue learning about Bitcoin.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Exchanges Section -->
-    <section id="exchanges" class="py-16 px-4 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Where to Buy Bitcoin with $50</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Exchange 1 -->
-                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div class="bg-gray-800 text-white p-4">
-                        <h3 class="text-xl font-bold">Coinbase</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between mb-4">
-                            <span class="font-medium">Minimum:</span>
-                            <span>$2</span>
-                        </div>
-                        <div class="flex justify-between mb-4">
-                            <span class="font-medium">Fees:</span>
-                            <span>1.49%-3.99%</span>
-                        </div>
-                        <div class="flex justify-between mb-6">
-                            <span class="font-medium">Payment Methods:</span>
-                            <span>Bank, Card, PayPal</span>
-                        </div>
-                        <a href="https://www.coinbase.com/" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded font-medium">
-                            Visit Exchange
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Exchange 2 -->
-                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div class="bg-gray-800 text-white p-4">
-                        <h3 class="text-xl font-bold">Kraken</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between mb-4">
-                            <span class="font-medium">Minimum:</span>
-                            <span>$10</span>
-                        </div>
-                        <div class="flex justify-between mb-4">
-                            <span class="font-medium">Fees:</span>
-                            <span>0.16%-0.26%</span>
-                        </div>
-                        <div class="flex justify-between mb-6">
-                            <span class="font-medium">Payment Methods:</span>
-                            <span>Bank, Card</span>
-                        </div>
-                        <a href="https://www.kraken.com/" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded font-medium">
-                            Visit Exchange
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Exchange 3 -->
-                <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div class="bg-gray-800 text-white p-4">
-                        <h3 class="text-xl font-bold">Binance</h3>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between mb-4">
-                            <span class="font-medium">Minimum:</span>
-                            <span>$15</span>
-                        </div>
-                        <div class="flex justify-between mb-4">
-                            <span class="font-medium">Fees:</span>
-                            <span>0.1%</span>
-                        </div>
-                        <div class="flex justify-between mb-6">
-                            <span class="font-medium">Payment Methods:</span>
-                            <span>Bank, Card, P2P</span>
-                        </div>
-                        <a href="https://www.binance.com/" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded font-medium">
-                            Visit Exchange
-                        </a>
-                    </div>
-                </div>
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+            <!-- Espaço reservado para o vídeo do YouTube -->
+            <div class="video-container">
+                <!-- Cole o embed do YouTube aqui -->
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sICkWbQohSc?si=Y5zv1N_TtRqdR6o8&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             
-            <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-400 p-4 max-w-3xl mx-auto">
-                <p class="text-yellow-700"><i class="fas fa-exclamation-triangle mr-2"></i> <strong>Important:</strong> Exchange availability varies by country. Always research fees and payment methods for your specific region.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-16 px-4 bg-gray-50">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
             
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center focus:outline-none">
-                        <span class="text-lg font-medium text-gray-800">Is $50 really enough to start investing in Bitcoin?</span>
-                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600">Absolutely! Bitcoin is divisible to eight decimal places (0.00000001 BTC = 1 satoshi). With $50, you can buy a fraction of a Bitcoin. Many successful investors started with small amounts and gradually increased their holdings over time.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center focus:outline-none">
-                        <span class="text-lg font-medium text-gray-800">What's the best way to invest small amounts regularly?</span>
-                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600">Dollar-cost averaging (DCA) is an excellent strategy for small investors. This means investing a fixed amount (like $50) at regular intervals (weekly, monthly) regardless of price. Many exchanges offer automated recurring purchases to make this easy.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center focus:outline-none">
-                        <span class="text-lg font-medium text-gray-800">Do I need a Bitcoin wallet if I'm only investing $50?</span>
-                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600">While you can keep small amounts on reputable exchanges, we recommend moving Bitcoin to your own wallet for security. Even with $50, learning to use a wallet is valuable. For small amounts, mobile wallets like BlueWallet or Exodus are user-friendly options.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 4 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center focus:outline-none">
-                        <span class="text-lg font-medium text-gray-800">How do taxes work with small Bitcoin investments?</span>
-                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600">Tax regulations vary by country. Generally, you may owe capital gains tax when you sell or trade Bitcoin for profit. Small purchases might not trigger reporting requirements, but you should keep records of all transactions. Consult a tax professional for advice specific to your situation.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 5 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button class="faq-toggle w-full text-left p-6 flex justify-between items-center focus:outline-none">
-                        <span class="text-lg font-medium text-gray-800">What's the biggest mistake small Bitcoin investors make?</span>
-                        <i class="fas fa-chevron-down text-orange-500 transition-transform"></i>
-                    </button>
-                    <div class="faq-content px-6 pb-6 hidden">
-                        <p class="text-gray-600">Two common mistakes: 1) Trying to time the market (buying and selling frequently), and 2) Not securing their Bitcoin properly. The best approach is to buy regularly, hold long-term, and prioritize security education as your investment grows.</p>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
+    </main>
 
-    <!-- CTA Section -->
-    <section class="gradient-bg text-white py-16 px-4">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Bitcoin Journey?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Take the first step today. Remember, every Bitcoin holder started somewhere.</p>
-            <a href="#roadmap" class="inline-block bg-white text-orange-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg shadow-lg transition-all">
-                <i class="fas fa-map-marked-alt mr-2"></i> Follow the Bitcoin Map
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12 px-4">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-8 md:mb-0">
-                    <div class="flex items-center mb-4">
-                        <i class="fab fa-bitcoin text-3xl mr-3 text-orange-500"></i>
-                        <span class="text-2xl font-bold">Bitcoin Map</span>
-                    </div>
-                    <p class="text-gray-400 max-w-md">Helping beginners navigate the world of Bitcoin investing, one small step at a time.</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Resources</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white">Bitcoin Whitepaper</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Wallet Guides</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Security Tips</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Community</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white">Forums</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Local Meetups</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Legal</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white">Disclaimer</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2023 Bitcoin Map. Not financial advice. Bitcoin is a volatile asset; only invest what you can afford to lose.</p>
-            </div>
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script>
-        // FAQ toggle functionality
-        document.querySelectorAll('.faq-toggle').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                
-                content.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
